@@ -1,0 +1,77 @@
+<!-- ============================================================
+     HEADER Component – Sticky Navbar
+     File: components/header.html
+     CSS:  assets/css/header.css
+     JS:   assets/js/header.js
+     ============================================================ -->
+<header class="header" id="main-header">
+    <div class="container header__inner">
+
+        <!-- Logo -->
+        <a href="/" class="header__logo" id="logo-link" aria-label="Networld Asia – Trang chủ">
+            <img src="assets/images/logo-networld.svg" alt="Networld Asia Logo" class="header__logo-img"
+                id="header-logo-img" />
+            <!-- Fallback text logo if image missing -->
+            <span class="header__logo-wordmark" id="header-logo-text" aria-hidden="true">
+                Net<span>world</span>
+            </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="header__nav" aria-label="Main navigation">
+            <div class="nav__item">
+                <button class="nav__link" id="nav-san-pham" aria-haspopup="true" aria-expanded="false">
+                    Sản phẩm
+                    <svg class="nav__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+                <div class="nav__dropdown" role="menu">
+                    <a href="#dich-vu" class="nav__dropdown-link" role="menuitem" id="nav-drop-web">Thiết kế Website</a>
+                    <a href="#dich-vu" class="nav__dropdown-link" role="menuitem" id="nav-drop-ads">Quảng cáo Ads</a>
+                    <a href="#dich-vu" class="nav__dropdown-link" role="menuitem" id="nav-drop-social">Social Media</a>
+                    <a href="#dich-vu" class="nav__dropdown-link" role="menuitem" id="nav-drop-data">Data &amp;
+                        Analytics</a>
+                </div>
+            </div>
+
+            <div class="nav__item">
+                <a href="#dich-vu" class="nav__link" id="nav-dich-vu">Dịch vụ</a>
+            </div>
+
+            <div class="nav__item">
+                <a href="#pricing" class="nav__link" id="nav-goi-gia">Gói &amp; Giá</a>
+            </div>
+
+            <div class="nav__item">
+                <a href="#cong-ty" class="nav__link" id="nav-cong-ty">Công ty</a>
+            </div>
+        </nav>
+
+        <!-- Desktop CTA -->
+        <div class="header__actions">
+            <a href="#pricing" class="btn btn--primary btn--sm" id="btn-header-cta">Dùng thử</a>
+        </div>
+
+        <!-- Hamburger (Mobile) -->
+        <button class="header__hamburger" id="hamburger-btn" aria-label="Mở menu" aria-expanded="false"
+            aria-controls="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+</header>
+
+<!-- Mobile Menu (Portal – outside header flow) -->
+<div class="header__mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+    <a href="#dich-vu" class="mobile-nav__link" id="mobile-san-pham">Sản phẩm</a>
+    <a href="#dich-vu" class="mobile-nav__link" id="mobile-dich-vu">Dịch vụ</a>
+    <a href="#pricing" class="mobile-nav__link" id="mobile-goi-gia">Gói &amp; Giá</a>
+    <a href="#cong-ty" class="mobile-nav__link" id="mobile-cong-ty">Công ty</a>
+    <div class="mobile-nav__footer">
+        <a href="#pricing" class="btn btn--primary" id="mobile-cta">Dùng thử ngay →</a>
+    </div>
+</div>

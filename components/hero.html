@@ -1,0 +1,90 @@
+<!-- ============================================================
+     HERO Component
+     File : components/hero.html
+     CSS  : assets/css/hero.css
+     JS   : assets/js/hero.js
+     ============================================================ -->
+<section class="hero" id="hero" aria-labelledby="hero-heading">
+
+    <!-- ── Decorative background (blobs + waves matching Figma) ── -->
+    <div class="hero__bg" aria-hidden="true">
+        <div class="hero__blob hero__blob--1"></div>
+        <div class="hero__blob hero__blob--2"></div>
+        <div class="hero__blob hero__blob--3"></div>
+
+        <!-- Wave layer 1 -->
+        <svg class="hero__wave hero__wave--1" viewBox="0 0 1440 300" preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill="rgba(26,111,244,0.08)"
+                d="M0,200 C180,160 360,240 540,200 C720,160 900,240 1080,210 C1260,180 1350,220 1440,200 L1440,300 L0,300 Z" />
+        </svg>
+
+        <!-- Wave layer 2 (lighter, offset) -->
+        <svg class="hero__wave hero__wave--2" viewBox="0 0 1440 300" preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill="rgba(26,111,244,0.05)"
+                d="M0,240 C200,200 400,260 600,230 C800,200 1000,260 1200,235 C1320,220 1380,245 1440,235 L1440,300 L0,300 Z" />
+        </svg>
+    </div>
+
+    <!-- ── Main content ── -->
+    <div class="hero__content">
+
+        <!-- Eyebrow label -->
+        <p class="hero__eyebrow">
+            <span class="hero__eyebrow-dot"></span>
+            Được bảo trợ bởi Networld Asia
+        </p>
+
+        <!-- Main heading (2 lines as per Figma) -->
+        <h1 class="hero__title" id="hero-heading">
+            Giải pháp Digital tổng thể
+            <span class="hero__title--highlight">Kiến Tạo &amp; Vận Hành trọn gói.</span>
+        </h1>
+
+        <!-- Supporting text -->
+        <p class="hero__subtitle">
+            Web. Ads. Social. Data. Kết nối mọi mảnh ghép kinh doanh của bạn vào
+            một quy trình vận hành mượt mà và tối ưu chi phí.
+        </p>
+
+        <!-- CTA row: outline + primary (Figma layout) -->
+        <div class="hero__actions">
+            <a href="#pricing" class="btn btn--outline btn--lg" id="btn-hero-pricing">
+                Bảng giá dịch vụ
+            </a>
+            <a href="#contact" class="btn btn--primary btn--lg" id="btn-hero-cta">
+                Dùng thử ngay
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- ── Stats bar ── -->
+    <div class="hero__stats" role="list" aria-label="Thống kê nổi bật">
+        <div class="hero__stat" role="listitem">
+            <span class="hero__stat-value" data-count="500" data-suffix="+">0+</span>
+            <span class="hero__stat-label">Khách hàng tin dùng</span>
+        </div>
+        <div class="hero__stat-divider" role="separator" aria-hidden="true"></div>
+        <div class="hero__stat" role="listitem">
+            <span class="hero__stat-value" data-count="1200" data-suffix="+" data-sep=",">0+</span>
+            <span class="hero__stat-label">Dự án triển khai</span>
+        </div>
+        <div class="hero__stat-divider" role="separator" aria-hidden="true"></div>
+        <div class="hero__stat" role="listitem">
+            <span class="hero__stat-value" data-count="8" data-suffix="+">0+</span>
+            <span class="hero__stat-label">Năm kinh nghiệm</span>
+        </div>
+        <div class="hero__stat-divider" role="separator" aria-hidden="true"></div>
+        <div class="hero__stat" role="listitem">
+            <span class="hero__stat-value" data-count="98" data-suffix="%">0%</span>
+            <span class="hero__stat-label">Tỷ lệ hài lòng</span>
+        </div>
+    </div>
+
+</section>

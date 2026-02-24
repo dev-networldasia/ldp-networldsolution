@@ -1,0 +1,307 @@
+/* ============================================================
+   HERO.CSS – Hero Section (matches Figma design)
+   Networld Asia – Digital Marketing Landing Page
+   ============================================================ */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: var(--navbar-h);
+    padding-bottom: 0;
+    background: var(--gradient-hero-bg);
+    overflow: hidden;
+}
+
+/* ========== Background decorations ========== */
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Animated blobs */
+.hero__blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    animation: blobFloat 10s ease-in-out infinite alternate;
+}
+
+.hero__blob--1 {
+    width: 560px;
+    height: 560px;
+    background: radial-gradient(circle, rgba(26, 111, 244, 0.22) 0%, transparent 65%);
+    top: -140px;
+    right: -80px;
+    animation-delay: 0s;
+}
+
+.hero__blob--2 {
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.18) 0%, transparent 65%);
+    bottom: 100px;
+    left: -60px;
+    animation-delay: 3s;
+}
+
+.hero__blob--3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(26, 111, 244, 0.12) 0%, transparent 65%);
+    top: 40%;
+    left: 42%;
+    animation-delay: 6s;
+}
+
+@keyframes blobFloat {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+
+    100% {
+        transform: translate(28px, -32px) scale(1.06);
+    }
+}
+
+/* Wave SVG layers */
+.hero__wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.hero__wave--1 {
+    bottom: 30px;
+}
+
+.hero__wave--2 {
+    bottom: 0px;
+}
+
+/* ========== Content area ========== */
+.hero__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 720px;
+    margin-inline: auto;
+    padding-inline: var(--container-pad);
+    text-align: center;
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-xl);
+}
+
+/* Eyebrow */
+.hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--font-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+    opacity: 0;
+    animation: fadeInUp 0.55s ease forwards;
+    animation-delay: 0.1s;
+}
+
+.hero__eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    flex-shrink: 0;
+    animation: pulseDot 2.2s ease-in-out infinite;
+}
+
+@keyframes pulseDot {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(26, 111, 244, 0.4);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.3);
+        box-shadow: 0 0 0 5px rgba(26, 111, 244, 0);
+    }
+}
+
+/* Main heading - matching Figma */
+.hero__title {
+    font-size: clamp(2.1rem, 5.2vw, 3.6rem);
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+    opacity: 0;
+    animation: fadeInUp 0.55s ease forwards;
+    animation-delay: 0.22s;
+}
+
+/* Blue gradient second line – matches Figma "Kiến Tạo & Vận Hành trọn gói." */
+.hero__title--highlight {
+    display: block;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Subtitle */
+.hero__subtitle {
+    font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    max-width: 480px;
+    margin-inline: auto;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    opacity: 0;
+    animation: fadeInUp 0.55s ease forwards;
+    animation-delay: 0.36s;
+}
+
+/* ========== CTA Buttons ========== */
+.hero__actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 0.55s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Arrow icon inside primary button */
+.hero__actions .btn--primary svg {
+    transition: transform var(--transition-base);
+}
+
+.hero__actions .btn--primary:hover svg {
+    transform: translateX(5px);
+}
+
+/* ========== Stats bar ========== */
+.hero__stats {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding-inline: var(--container-pad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2xl);
+    padding-block: var(--space-2xl);
+    opacity: 0;
+    animation: fadeInUp 0.55s ease forwards;
+    animation-delay: 0.64s;
+}
+
+.hero__stat {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.hero__stat-value {
+    display: block;
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.hero__stat-label {
+    display: block;
+    font-size: var(--font-sm);
+    color: var(--color-text-muted);
+    margin-top: 5px;
+    white-space: nowrap;
+}
+
+.hero__stat-divider {
+    width: 1px;
+    height: 44px;
+    background: var(--color-border);
+    flex-shrink: 0;
+}
+
+/* ========== Keyframes ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding-bottom: 0;
+    }
+
+    .hero__content {
+        padding-top: var(--space-xl);
+    }
+
+    .hero__stats {
+        gap: var(--space-xl);
+    }
+
+    .hero__blob--1 {
+        width: 360px;
+        height: 360px;
+    }
+
+    .hero__blob--2 {
+        width: 280px;
+        height: 280px;
+    }
+
+    .hero__blob--3 {
+        display: none;
+    }
+}
+
+@media (max-width: 560px) {
+    .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero__actions .btn {
+        justify-content: center;
+    }
+
+    .hero__stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-lg);
+        padding-bottom: var(--space-xl);
+    }
+
+    .hero__stat-divider {
+        display: none;
+    }
+}
