@@ -13,6 +13,12 @@ import { initHero } from './hero.js';
 // ─── Component registry ──────────────────────────────────────────
 // { placeholder id in index.html → { html: path, init: fn } }
 const COMPONENTS = [
+    // SVG sprite – phải load trước tất cả component khác
+    {
+        id: 'svg-sprite',
+        html: 'components/icons.html',
+        init: null,
+    },
     {
         id: 'section-header',
         html: 'components/header.html',
@@ -33,24 +39,45 @@ const COMPONENTS = [
     // { id: 'section-footer',       html: 'components/footer.html',       init: null },
 ];
 
+// ─── Helper: load một component vào DOM ──────────────────────────
+async function loadComponent({ id, html, init }) {
+    const target = document.getElementById(id);
+    if (!target) {
+        console.warn(`[main.js] ⚠️  #${id} không tìm thấy trong DOM`);
+        return;
+    }
+    try {
+        const res = await fetch(html);
+        if (!res.ok) throw new Error(`${html} → ${res.status}`);
+        const text = await res.text();
+
+        // DOMParser tạo full document – reliable hơn innerHTML/template
+        // cho SVG bên trong <a> (tránh HTML5 fragment-parser quirk)
+        const doc = new DOMParser().parseFromString(text, 'text/html');
+
+        // Array.from snapshot trước khi move (childNodes là live list)
+        target.replaceChildren(...Array.from(doc.body.childNodes));
+
+        const svgCount = target.querySelectorAll('svg').length;
+        console.log(`[main.js] ✅ #${id}: ${target.childNodes.length} nodes | ${svgCount} SVG`);
+
+        if (typeof init === 'function') init();
+    } catch (err) {
+        console.error(`[main.js] ❌ #${id}:`, err);
+    }
+}
+
 // ─── Bootstrap ───────────────────────────────────────────────────
 async function bootstrap() {
-    // Load all components in parallel (preserving DOM order)
-    await Promise.all(
-        COMPONENTS.map(async ({ id, html, init }) => {
-            const target = document.getElementById(id);
-            if (!target) return;
+    // Phase 1 – SVG sprite phải có trong DOM TRƯỚC khi mọi section init
+    //           (để <use href="#icon-id"> resolve đúng symbol)
+    const [sprite, ...sections] = COMPONENTS;
+    await loadComponent(sprite);
+    console.log('[main.js] ✅ SVG sprite injected');
 
-            try {
-                const res = await fetch(html);
-                if (!res.ok) throw new Error(`Failed to load ${html}: ${res.status}`);
-                target.innerHTML = await res.text();
-                if (typeof init === 'function') init();
-            } catch (err) {
-                console.error(`[main.js] Error loading component "${id}":`, err);
-            }
-        })
-    );
+    // Phase 2 – Load tất cả sections song song (nhanh hơn, thứ tự DOM không đổi)
+    await Promise.all(sections.map(loadComponent));
+    console.log('[main.js] ✅ All components injected');
 }
 
 bootstrap();

@@ -1,6 +1,6 @@
 /**
  * hero.js – Hero section interactions
- * Handles: counter animation on scroll into view
+ * Handles: count-up animation for stat numbers (triggered on scroll)
  */
 
 export function initHero() {
@@ -8,8 +8,9 @@ export function initHero() {
 }
 
 /**
- * Count-up animation for stat numbers.
- * Reads data-count and data-suffix from the element.
+ * Count-up animation for .hero__stat-value elements.
+ * Attributes: data-count (target number), data-suffix (e.g. "+", "%"),
+ *             data-sep="," (optional thousands separator)
  */
 function animateCounters() {
     const counters = document.querySelectorAll('.hero__stat-value[data-count]');
