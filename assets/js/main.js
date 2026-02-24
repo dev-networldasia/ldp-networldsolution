@@ -1,83 +1,80 @@
 /**
- * main.js – App entry point
- * Loads HTML components into their placeholder divs,
- * then initialises each section's JS module.
- *
- * Pattern: fetch() → innerHTML → init()
- * Add new sections here as they are built.
+ * main.js – Template loader & component initializer
+ * Loads HTML templates from components/ folder and initializes interactive features
  */
 
 import { initHeader } from './header.js';
-import { initHero } from './hero.js';
 
-// ─── Component registry ──────────────────────────────────────────
-// { placeholder id in index.html → { html: path, init: fn } }
-const COMPONENTS = [
-    // SVG sprite – phải load trước tất cả component khác
-    {
-        id: 'svg-sprite',
-        html: 'components/icons.html',
-        init: null,
-    },
-    {
-        id: 'section-header',
-        html: 'components/header.html',
-        init: initHeader,
-    },
-    {
-        id: 'section-hero',
-        html: 'components/hero.html',
-        init: initHero,
-    },
-    // TODO: Add more sections below as they are built
-    // { id: 'section-trusted',      html: 'components/trusted.html',      init: initTrusted },
-    // { id: 'section-services',     html: 'components/services.html',     init: initServices },
-    // { id: 'section-why-us',       html: 'components/why-us.html',       init: null },
-    // { id: 'section-pricing',      html: 'components/pricing.html',      init: initPricing },
-    // { id: 'section-testimonials', html: 'components/testimonials.html', init: null },
-    // { id: 'section-cta',          html: 'components/cta.html',          init: null },
-    // { id: 'section-footer',       html: 'components/footer.html',       init: null },
-];
-
-// ─── Helper: load một component vào DOM ──────────────────────────
-async function loadComponent({ id, html, init }) {
-    const target = document.getElementById(id);
-    if (!target) {
-        console.warn(`[main.js] ⚠️  #${id} không tìm thấy trong DOM`);
-        return;
-    }
+// Template loading function
+async function loadTemplate(templateName, templateDefName) {
     try {
-        const res = await fetch(html);
-        if (!res.ok) throw new Error(`${html} → ${res.status}`);
-        const text = await res.text();
+        const response = await fetch(`components/${templateName}.html`);
+        if (!response.ok) {
+            throw new Error(`Failed to load ${templateName}: ${response.status}`);
+        }
 
-        // DOMParser tạo full document – reliable hơn innerHTML/template
-        // cho SVG bên trong <a> (tránh HTML5 fragment-parser quirk)
-        const doc = new DOMParser().parseFromString(text, 'text/html');
+        const htmlContent = await response.text();
 
-        // Array.from snapshot trước khi move (childNodes là live list)
-        target.replaceChildren(...Array.from(doc.body.childNodes));
+        // Extract content between {{ define "..." }} and {{ end }}
+        const defineMatch = htmlContent.match(/\{\{\s*define\s+["']([^"']+)["']\s*\}\}([\s\S]*?)\{\{\s*end\s*\}\}/);
 
-        const svgCount = target.querySelectorAll('svg').length;
-        console.log(`[main.js] ✅ #${id}: ${target.childNodes.length} nodes | ${svgCount} SVG`);
+        if (defineMatch) {
+            const content = defineMatch[2].trim();
+            const defineName = defineMatch[1];
 
-        if (typeof init === 'function') init();
-    } catch (err) {
-        console.error(`[main.js] ❌ #${id}:`, err);
+            // Find and replace template placeholder in body HTML
+            // Support both {{template "..."}} and {{ template "..." }}
+            const bodyHTML = document.body.innerHTML;
+            const regex = new RegExp(`<!--[^>]*-->\s*\{\{\s*template\s+["']${defineName}["']\s*\}\}`, 'g');
+            const newHTML = bodyHTML.replace(regex, content);
+
+            if (bodyHTML !== newHTML) {
+                document.body.innerHTML = newHTML;
+                console.log(`✓ Loaded template: ${templateName}`);
+            } else {
+                console.warn(`Template call not found for: ${defineName}`);
+            }
+        } else {
+            console.warn(`Template definition not found in ${templateName}.html`);
+        }
+    } catch (error) {
+        console.error(`Error loading template ${templateName}:`, error);
     }
 }
 
-// ─── Bootstrap ───────────────────────────────────────────────────
-async function bootstrap() {
-    // Phase 1 – SVG sprite phải có trong DOM TRƯỚC khi mọi section init
-    //           (để <use href="#icon-id"> resolve đúng symbol)
-    const [sprite, ...sections] = COMPONENTS;
-    await loadComponent(sprite);
-    console.log('[main.js] ✅ SVG sprite injected');
+// Load SVG icons
+async function loadSvgSprite() {
+    try {
+        const response = await fetch('components/icons.html');
+        if (!response.ok) return;
 
-    // Phase 2 – Load tất cả sections song song (nhanh hơn, thứ tự DOM không đổi)
-    await Promise.all(sections.map(loadComponent));
-    console.log('[main.js] ✅ All components injected');
+        const svgContent = await response.text();
+        const spriteContainer = document.getElementById('svg-sprite');
+
+        if (spriteContainer) {
+            spriteContainer.innerHTML = svgContent;
+            console.log('✓ Loaded SVG sprites');
+        }
+    } catch (error) {
+        console.error('Error loading SVG sprite:', error);
+    }
 }
 
-bootstrap();
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', async () => {
+    console.log('🚀 Starting template loader...');
+
+    // Load SVG sprite first
+    await loadSvgSprite();
+
+    // Load templates in order
+    await loadTemplate('header', 'section-header');
+    await loadTemplate('hero', 'section-hero');
+    await loadTemplate('services', 'section-website');
+
+    // Initialize interactive components after templates are loaded
+    setTimeout(() => {
+        initHeader();
+        console.log('✓ Components initialized');
+    }, 100); // Small delay to ensure DOM is updated
+});

@@ -1,0 +1,329 @@
+/* ============================================================
+   SERVICES Component Styles
+   File: assets/css/services.css
+   ============================================================ */
+
+/* Services Section */
+.services {
+    padding: 80px 0;
+    background: #F7F7F7;
+    position: relative;
+    overflow: hidden;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.services .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Services Content Layout */
+.services-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Left Column - Service Information */
+.services-info {
+    max-width: 600px;
+}
+
+.services-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.services-title .highlight {
+    color: #0C5EFF;
+}
+
+/* Services List */
+.services-list {
+    margin-bottom: 40px;
+}
+
+.service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px 0;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.05); */
+    position: relative;
+}
+
+.service-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Service Icon */
+.service-icon {
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.checkmark {
+    width: 24px;
+    height: 24px;
+}
+
+/* Service Content */
+.service-content {
+    flex: 1;
+}
+
+.service-content .service-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.service-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* Service Price */
+.service-price {
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.price-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(66, 133, 244, 0.1);
+    border: 1px solid rgba(66, 133, 244, 0.3);
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4285f4;
+}
+
+/* Pricing Button */
+.services-pricing {
+    text-align: left;
+}
+
+.pricing-btn {
+    background: #4285f4;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.4);
+}
+
+.pricing-btn:hover {
+    background: #3367d6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(66, 133, 244, 0.5);
+}
+
+/* Right Column - Website Mockup */
+.services-mockup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mockup-container {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Browser Mockup */
+.browser-mockup {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+    transition: transform 0.3s ease;
+}
+
+.browser-mockup:hover {
+    transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
+/* Browser Header */
+.browser-header {
+    background: #f5f5f5;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.browser-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.control-red {
+    background: #ff5f56;
+}
+
+.control-yellow {
+    background: #ffbd2e;
+}
+
+.control-green {
+    background: #27ca3f;
+}
+
+.browser-url {
+    flex: 1;
+}
+
+.url-bar {
+    background: white;
+    border-radius: 6px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.url-icon {
+    font-size: 12px;
+}
+
+.url-line {
+    flex: 1;
+    height: 2px;
+    background: #4285f4;
+    border-radius: 1px;
+}
+
+/* Browser Content */
+.browser-content {
+    padding: 32px 24px;
+    min-height: 300px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-placeholder {
+    text-align: center;
+    width: 100%;
+}
+
+.placeholder-image {
+    margin-bottom: 24px;
+}
+
+.placeholder-image svg {
+    width: 120px;
+    height: 80px;
+}
+
+.content-lines {
+    margin-bottom: 24px;
+}
+
+.line {
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.line.short {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #4285f4;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services {
+        padding: 60px 0;
+    }
+    
+    .services-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .services-title {
+        font-size: 2rem;
+    }
+    
+    .service-item {
+        text-align: left;
+    }
+    
+    .browser-mockup {
+        transform: none;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-title {
+        font-size: 1.75rem;
+    }
+    
+    .service-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .service-price {
+        margin-left: 0;
+    }
+    
+    .pricing-btn {
+        width: 100%;
+        text-align: center;
+    }
+}

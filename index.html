@@ -2,74 +2,287 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Networld Asia – Giải pháp Digital Tổng Thể</title>
-    <link rel="icon" type="image/png" href="assets/images/fav-networldsolutions.png" />
-    <meta name="description"
-      content="Web. Ads. Social. Data. Kết nối mọi mảnh ghép kinh doanh của bạn vào một quy trình vận hành mượt mà và tối ưu chi phí với Networld Asia." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Networld Asia – Giải pháp Digital Tổng Thể</title>
+  <link rel="icon" type="image/png" href="assets/images/fav-networldsolutions.png" />
+  <meta name="description"
+    content="Web. Ads. Social. Data. Kết nối mọi mảnh ghép kinh doanh của bạn vào một quy trình vận hành mượt mà và tối ưu chi phí với Networld Asia." />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
-      rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Global Design System -->
-    <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- Global Design System -->
+  <link rel="stylesheet" href="assets/css/main.css" />
 
-    <!-- Section CSS (each team member owns their section's CSS) -->
-    <link rel="stylesheet" href="assets/css/header.css" />
-    <link rel="stylesheet" href="assets/css/hero.css" />
-    <!-- <link rel="stylesheet" href="assets/css/trusted.css" /> -->
-    <!-- <link rel="stylesheet" href="assets/css/services.css" /> -->
-    <!-- <link rel="stylesheet" href="assets/css/why-us.css" /> -->
-    <!-- <link rel="stylesheet" href="assets/css/pricing.css" /> -->
-    <!-- <link rel="stylesheet" href="assets/css/testimonials.css" /> -->
-    <!-- <link rel="stylesheet" href="assets/css/cta.css" /> -->
-    <!-- <link rel="stylesheet" href="assets/css/footer.css" /> -->
+  <!-- Section CSS (each team member owns their section's CSS) -->
+  <link rel="stylesheet" href="assets/css/header.css" />
+  <link rel="stylesheet" href="assets/css/hero.css" />
+  <link rel="stylesheet" href="assets/css/services.css" />
+
 </head>
 
 <body>
-  <!-- SVG Sprite (ẩn – được inject bởi main.js) -->
+  <!-- SVG Sprite (ẩn – được load từ components/icons.html) -->
   <div id="svg-sprite" aria-hidden="true"></div>
 
-  <!-- ① HEADER ──────────────────────────────────────────────── -->
-  <div id="section-header"></div>
+  <!-- HEADER-->
+  <header class="header">
+    <div class="container header__inner">
+  
+      <!-- Logo -->
+      <a href="/" class="header__logo" id="logo-link" aria-label="Networld Asia – Trang chủ">
+        <img src="assets/images/logo-networldsolutions-small.png" alt="Networld Asia Logo" class="header__logo-img"
+          id="header-logo-img" />
+        <!-- Fallback text logo if image missing -->
+        <!-- <span class="header__logo-wordmark" id="header-logo-text" aria-hidden="true">
+                  Net<span>world</span>
+              </span> -->
+      </a>
+  
+      <!-- Desktop Navigation -->
+      <nav class="header__nav" aria-label="Main navigation">
+        <div class="nav__item">
+          <button class="nav__link" id="nav-san-pham" aria-haspopup="true" aria-expanded="false">
+            Sản phẩm
+            <svg class="nav__link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+          <div class="nav__dropdown" role="menu">
+            <a href="#dich-vu" class="nav__dropdown-link" role="menuitem" id="nav-drop-web">Thiết kế Website</a>
+            <a href="#dich-vu" class="nav__dropdown-link" role="menuitem" id="nav-drop-ads">Quảng cáo Ads</a>
+            <a href="#dich-vu" class="nav__dropdown-link" role="menuitem" id="nav-drop-social">Social Media</a>
+            <a href="#dich-vu" class="nav__dropdown-link" role="menuitem" id="nav-drop-data">Data &amp;
+              Analytics</a>
+          </div>
+        </div>
+  
+        <div class="nav__item">
+          <a href="#dich-vu" class="nav__link" id="nav-dich-vu">Dịch vụ</a>
+        </div>
+  
+        <div class="nav__item">
+          <a href="#pricing" class="nav__link" id="nav-goi-gia">Gói &amp; Giá</a>
+        </div>
+  
+        <div class="nav__item">
+          <a href="#cong-ty" class="nav__link" id="nav-cong-ty">Công ty</a>
+        </div>
+      </nav>
+  
+      <!-- Desktop CTA -->
+      <div class="header__actions">
+        <a href="#pricing" class="btn btn--primary btn--sm" id="btn-header-cta">Dùng thử</a>
+      </div>
+  
+      <!-- Hamburger (Mobile) -->
+      <button class="header__hamburger" id="hamburger-btn" aria-label="Mở menu" aria-expanded="false"
+        aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+  
+    </div>
+  </header>
+  <!-- Mobile Menu (Portal – outside header flow) -->
+  <div class="header__mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+    <a href="#dich-vu" class="mobile-nav__link" id="mobile-san-pham">Sản phẩm</a>
+    <a href="#dich-vu" class="mobile-nav__link" id="mobile-dich-vu">Dịch vụ</a>
+    <a href="#pricing" class="mobile-nav__link" id="mobile-goi-gia">Gói &amp; Giá</a>
+    <a href="#cong-ty" class="mobile-nav__link" id="mobile-cong-ty">Công ty</a>
+    <div class="mobile-nav__footer">
+      <a href="#pricing" class="btn btn--primary" id="mobile-cta">Dùng thử ngay →</a>
+    </div>
+  </div>
 
-  <!-- ② HERO ────────────────────────────────────────────────── -->
-  <div id="section-hero"></div>
+  <!-- HERO -->
+  <section class="hero" id="hero" aria-labelledby="hero-heading">
+  
+    <!-- ── Decorative background (blobs + waves matching Figma) ── -->
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__blob hero__blob--1"></div>
+      <div class="hero__blob hero__blob--2"></div>
+      <div class="hero__blob hero__blob--3"></div>
+  
+      <!-- Wave layer 1 -->
+      <svg class="hero__wave hero__wave--1" viewBox="0 0 1440 300" preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill="rgba(26,111,244,0.08)"
+          d="M0,200 C180,160 360,240 540,200 C720,160 900,240 1080,210 C1260,180 1350,220 1440,200 L1440,300 L0,300 Z" />
+      </svg>
+  
+      <!-- Wave layer 2 (lighter, offset) -->
+      <svg class="hero__wave hero__wave--2" viewBox="0 0 1440 300" preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill="rgba(26,111,244,0.05)"
+          d="M0,240 C200,200 400,260 600,230 C800,200 1000,260 1200,235 C1320,220 1380,245 1440,235 L1440,300 L0,300 Z" />
+      </svg>
+    </div>
+  
+    <!-- ── Main content ── -->
+    <div class="hero__content">
+  
+      <!-- Eyebrow label -->
+      <p class="hero__eyebrow">
+        <span class="hero__eyebrow-dot"></span>
+        Được bảo trợ bởi Networld Asia
+      </p>
+  
+      <!-- Main heading (2 lines as per Figma) -->
+      <h1 class="hero__title" id="hero-heading">
+        Giải pháp Digital tổng thể
+        <span class="hero__title--highlight">Kiến Tạo &amp; Vận Hành trọn gói.</span>
+      </h1>
+  
+      <!-- Supporting text -->
+      <p class="hero__subtitle">
+        Web. Ads. Social. Data. Kết nối mọi mảnh ghép kinh doanh của bạn vào <br>
+        một quy trình vận hành mượt mà và tối ưu chi phí.
+      </p>
+  
+      <!-- CTA row: outline + primary (Figma layout) -->
+      <div class="hero__actions">
+        <a href="#pricing" class="btn btn--outline btn--sm" id="btn-hero-pricing">
+          Bảng giá dịch vụ
+        </a>
+        <a href="#contact" class="btn btn--primary btn--sm" id="btn-hero-cta">
+          <span>Dùng thử ngay</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M5 12H19" />
+            <path d="M12 5L19 12L12 19" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <!-- ③ TRUSTED BY (coming soon) ─────────────────────────────
-  <div id="section-trusted"></div>
-  -->
+  <!-- WEBSITE -->
+  <section class="services section" id="dich-vu" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="services-content">
+        <!-- Left Column - Service Information -->
+        <div class="services-info">
+          <h2 class="services-title">
+            Thiết kế Website <span class="highlight">Chuẩn UI/UX</span><br>
+            & <span class="highlight">Tối ưu chuyển đổi</span>
+          </h2>
+  
+          <div class="services-list">
+            <!-- Service Item 1 -->
+            <div class="service-item">
+              <div class="service-icon">
+                <svg class="checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="9" fill="#4285f4" />
+                  <path d="m9 12 2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Thiết kế đơn giản đầy động</h3>
+                <p class="service-description">
+                  Giao diện độc quyền (UI/UX) được tối ưu theo hành vi khách hàng từng ngành hàng cụ thể.
+                </p>
+              </div>
+            </div>
+  
+            <!-- Service Item 2 -->
+            <div class="service-item">
+              <div class="service-icon">
+                <svg class="checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="9" fill="#4285f4" />
+                  <path d="m9 12 2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Hạ tầng chuẩn Ads & SEO và Tracking</h3>
+                <p class="service-description">
+                  Cấu trúc code sạch, tốc độ tải nhanh giúp tăng điểm chất lượng quảng cáo. Tích hợp sẵn
+                  hệ thống đo lường Google Analytics 4 để theo dõi hành vi và chuyển đổi.
+                </p>
+              </div>
+            </div>
+  
+            <!-- Service Item 3 -->
+            <div class="service-item">
+              <div class="service-icon">
+                <svg class="checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="9" fill="#4285f4" />
+                  <path d="m9 12 2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Vận hành đa nền tảng</h3>
+                <p class="service-description">
+                  Hiển thị mượt mà trên mọi thiết bị (Mobile/Tablet) và tích hợp sẵn hệ thống Tracking đo
+                  lường dữ liệu.
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Pricing Button -->
+          <div class="services-pricing">
+            <button class="pricing-btn">
+              Giá từ: 15.000.000vnđ/page
+            </button>
+          </div>
+        </div>
+  
+        <!-- Right Column - Website Mockup -->
+        <div class="services-mockup">
+          <div class="mockup-container">
+            <div class="browser-mockup">
+              <!-- Browser Header -->
+              <div class="browser-header">
+                <div class="browser-controls">
+                  <span class="control control-red"></span>
+                  <span class="control control-yellow"></span>
+                  <span class="control control-green"></span>
+                </div>
+                <div class="browser-url">
+                  <div class="url-bar">
+                    <span class="url-icon">🔵</span>
+                    <span class="url-line"></span>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Browser Content -->
+              <div class="browser-content">
+                <div class="content-placeholder">
+                  <div class="placeholder-image">
+                    <svg viewBox="0 0 100 60" fill="none">
+                      <rect width="100" height="60" fill="#f5f5f5" rx="4" />
+                      <rect x="20" y="20" width="60" height="20" fill="#e0e0e0" rx="2" />
+                    </svg>
+                  </div>
+                  <div class="content-lines">
+                    <div class="line"></div>
+                    <div class="line short"></div>
+                  </div>
+                  <div class="cta-button">
+                    CTA
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- ④ SERVICES (coming soon) ───────────────────────────────
-  <div id="section-services"></div>
-  -->
-
-  <!-- ⑤ WHY US (coming soon) ─────────────────────────────────
-  <div id="section-why-us"></div>
-  -->
-
-  <!-- ⑥ PRICING (coming soon) ────────────────────────────────
-  <div id="section-pricing"></div>
-  -->
-
-  <!-- ⑦ TESTIMONIALS (coming soon) ───────────────────────────
-  <div id="section-testimonials"></div>
-  -->
-
-  <!-- ⑧ CTA BANNER (coming soon) ─────────────────────────────
-  <div id="section-cta"></div>
-  -->
-
-  <!-- ⑨ FOOTER (coming soon) ─────────────────────────────────
-  <div id="section-footer"></div>
-  -->
-
-  <!-- Main JS (ES module – loads & wires all components) -->
+  <!-- Main JS (loads templates and initializes components) -->
   <script type="module" src="assets/js/main.js"></script>
 </body>
 
