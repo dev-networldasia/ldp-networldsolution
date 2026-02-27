@@ -5,6 +5,19 @@
 
 import { initHeader } from './header.js';
 
+// Pricing cards – click to activate
+function initPricingCards() {
+    const cards = document.querySelectorAll('.pricing-card');
+    if (!cards.length) return;
+
+    cards.forEach((card) => {
+        card.addEventListener('click', () => {
+            cards.forEach((c) => c.classList.remove('pricing-card--active'));
+            card.classList.add('pricing-card--active');
+        });
+    });
+}
+
 // Template loading function
 async function loadTemplate(templateName, templateDefName) {
     try {
@@ -75,6 +88,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Initialize interactive components after templates are loaded
     setTimeout(() => {
         initHeader();
+        initPricingCards();
         console.log('✓ Components initialized');
     }, 100); // Small delay to ensure DOM is updated
 });
