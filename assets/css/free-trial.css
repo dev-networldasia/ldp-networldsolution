@@ -1,0 +1,143 @@
+/* ══════════════════════════════════════════════════════════════
+   FREE TRIAL CTA SECTION
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Outer section: provides side breathing room ── */
+.free-trial {
+    padding: var(--space-3xl) var(--container-pad);
+    background: transparent;
+}
+
+/* ── Card: background image fills the card ── */
+.free-trial__card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2.4rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* Fallback gradient in case image hasn't loaded */
+    background-color: #0c5eff;
+    box-shadow:
+        0 2.4rem 6rem rgba(12, 94, 255, 0.28),
+        0 0.4rem 1.6rem rgba(0, 0, 0, 0.08);
+}
+
+/* ── Inner container: stacked center ── */
+.free-trial__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.4rem;
+    padding-block: 7.2rem;
+}
+
+/* ── Heading ── */
+.free-trial__title {
+    font-size: clamp(3rem, 5vw, var(--font-4xl));
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+/* ── Subtitle ── */
+.free-trial__subtitle {
+    font-size: clamp(1.4rem, 1.7vw, 1.6rem);
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.75;
+    margin: 0;
+    max-width: 56rem;
+}
+
+.free-trial__subtitle strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* ── CTA Button — white background ── */
+.free-trial__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 1.5rem 4rem;
+    border-radius: var(--radius-full);
+    background: #ffffff;
+    border: none;
+    color: #0c5eff;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-top: 0.8rem;
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        background 0.22s ease;
+    box-shadow: 0 0.4rem 1.6rem rgba(0, 0, 0, 0.12);
+}
+
+.free-trial__btn em {
+    font-style: normal;
+    font-weight: 700;
+    color: #f5a623;
+}
+
+.free-trial__btn:hover {
+    background: #f0f5ff;
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.18);
+}
+
+.free-trial__btn:active {
+    transform: translateY(0);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE: TABLET (≤ 768px)
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    .free-trial {
+        padding-inline: 1.6rem;
+    }
+
+    .free-trial__card {
+        border-radius: 1.6rem;
+    }
+
+    .free-trial__inner {
+        padding-block: 5.6rem;
+        gap: 2rem;
+    }
+
+    .free-trial__btn {
+        padding: 1.4rem 3.2rem;
+        font-size: 1.5rem;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE: MOBILE (≤ 480px)
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+    .free-trial__inner {
+        padding-block: 4.8rem;
+    }
+
+    .free-trial__title br {
+        display: none;
+    }
+
+    .free-trial__subtitle br {
+        display: none;
+    }
+
+    .free-trial__btn {
+        width: 100%;
+        justify-content: center;
+        max-width: 32rem;
+    }
+}

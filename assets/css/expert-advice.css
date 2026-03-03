@@ -1,0 +1,202 @@
+/* ══════════════════════════════════════════════════════════════
+   EXPERT ADVICE SECTION – Lời khuyên từ chuyên gia
+   ══════════════════════════════════════════════════════════════ */
+
+.expert-advice {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    min-height: 520px;
+    display: flex;
+    align-items: stretch;
+}
+
+/* ── Background Image ── */
+.expert-advice__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+/* ── Dark Overlay ── */
+.expert-advice__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 22, 40, 0.62);
+    z-index: 1;
+}
+
+/* ── Container: 2-column grid ── */
+.expert-advice__container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    min-height: 520px;
+    gap: 6rem;
+    padding-block: 8rem;
+}
+
+/* ── Left column: purely decorative space (photo shows through bg) ── */
+
+/* ── Right: content ── */
+.expert-advice__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+/* ── Section Title ── */
+.expert-advice__title {
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* ── Slider wrapper ── */
+.expert-advice__slider {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ── Large opening quote SVG ── */
+.expert-advice__quote-icon {
+    line-height: 0;
+    margin-bottom: 0.4rem;
+}
+
+/* ── Slides wrapper: fixed-height for smooth transitions ── */
+.expert-advice__slides-wrapper {
+    position: relative;
+    min-height: 16rem;
+}
+
+/* ── Individual slide ── */
+.expert-advice__slide {
+    display: none;
+    flex-direction: column;
+    gap: 1.6rem;
+    animation: expertFadeIn 0.45s ease both;
+}
+
+.expert-advice__slide.is-active {
+    display: flex;
+}
+
+@keyframes expertFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1.2rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Quote text ── */
+.expert-advice__quote {
+    font-size: clamp(1.5rem, 1.8vw, 1.8rem);
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0;
+    font-style: normal;
+}
+
+/* ── Author ── */
+.expert-advice__author {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.55);
+    margin: 0;
+    font-style: normal;
+    letter-spacing: 0.02em;
+}
+
+/* ── Navigation buttons row ── */
+.expert-advice__nav {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 0.4rem;
+}
+
+/* ── Prev / Next buttons ── */
+.expert-advice__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.expert-advice__btn:hover {
+    background: rgba(255, 255, 255, 0.24);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.08);
+}
+
+.expert-advice__btn:active {
+    transform: scale(0.95);
+}
+
+.expert-advice__btn svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE: TABLET (≤ 900px)
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+    .expert-advice__container {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding-block: 6rem;
+        padding-inline: clamp(2rem, 5vw, 4rem);
+    }
+
+    .expert-advice__image-col {
+        display: none;
+    }
+
+    .expert-advice__slides-wrapper {
+        min-height: 18rem;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE: MOBILE (≤ 480px)
+   ══════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+    .expert-advice {
+        min-height: 420px;
+    }
+
+    .expert-advice__container {
+        padding-block: 4.8rem;
+    }
+
+    .expert-advice__slides-wrapper {
+        min-height: 20rem;
+    }
+
+    .expert-advice__btn {
+        width: 3.8rem;
+        height: 3.8rem;
+    }
+}
