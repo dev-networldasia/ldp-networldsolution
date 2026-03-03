@@ -239,9 +239,8 @@ select {
 }
 
 .btn--primary {
-  background: var(--gradient-primary);
-  color: var(--color-text-white);
-  box-shadow: 0 0.4rem 1.6rem rgba(26, 111, 244, 0.35);
+    background: #0C5EFF;
+    color: var(--color-text-white);
 }
 
 .btn--primary:hover {

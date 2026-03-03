@@ -16,6 +16,9 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
     rel="stylesheet" />
 
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <!-- Global Design System -->
   <link rel="stylesheet" href="assets/css/main.css" />
 
@@ -24,6 +27,11 @@
   <link rel="stylesheet" href="assets/css/hero.css" />
   <link rel="stylesheet" href="assets/css/services.css" />
   <link rel="stylesheet" href="assets/css/pricing.css" />
+  <link rel="stylesheet" href="assets/css/multiplatform.css" />
+  <link rel="stylesheet" href="assets/css/socialcare.css" />
+  <link rel="stylesheet" href="assets/css/report.css" />
+  <link rel="stylesheet" href="assets/css/customercare.css" />
+  <link rel="stylesheet" href="assets/css/testimonials.css" />
 
 </head>
 
@@ -138,18 +146,17 @@
 
       <!-- Main heading (2 lines as per Figma) -->
       <h1 class="hero__title" id="hero-heading">
-        Giải pháp Digital tổng thể
-        <span class="hero__title--highlight">Kiến Tạo &amp; Vận Hành trọn gói.</span>
+        MỘT NỀN TẢNG
+        <span class="hero__title--highlight">XỬ LÝ MỌI ĐIỂM CHẠM</span>
       </h1>
 
       <!-- Supporting text -->
       <p class="hero__subtitle">
-        Web. Ads. Social. Data. Kết nối mọi mảnh ghép kinh doanh của bạn vào <br>
-        một quy trình vận hành mượt mà và tối ưu chi phí.
+        Hệ sinh thái Web - Ads - Social - Data. Tối giản vận hành, tối đa hiệu suất.
       </p>
 
       <!-- CTA row: outline + primary (Figma layout) -->
-      <div class="hero__actions">
+      <!-- <div class="hero__actions">
         <a href="#pricing" class="btn btn--outline btn--sm" id="btn-hero-pricing">
           Bảng giá dịch vụ
         </a>
@@ -161,7 +168,7 @@
             <path d="M12 5L19 12L12 19" />
           </svg>
         </a>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -481,8 +488,727 @@
     </div><!-- /.container -->
   </section>
 
+  <!-- MULTIPLATFORM ADS -->
+  <section class="multiplatform section" id="multiplatform-ads" aria-labelledby="multiplatform-heading">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="multiplatform__header">
+        <h2 class="multiplatform__title" id="multiplatform-heading">
+          Giải pháp <span class="highlight">Quảng cáo đa kênh</span>
+        </h2>
+      </div>
+
+      <!-- Swiper Container -->
+      <div class="multiplatform__swiper-container swiper">
+        <div class="multiplatform__swiper swiper-wrapper">
+
+          <!-- Swiper Slide 1: Dashboard with absolute elements -->
+          <div class="multiplatform__slide swiper-slide">
+            <div class="dashboard-demo">
+              <!-- Dashboard Background Image -->
+              <img src="assets/images/multi_flatform/dashboard-demo.png" alt="Dashboard Overview"
+                class="dashboard-demo__image">
+
+              <!-- Chart Demo (Absolute) -->
+              <img src="assets/images/multi_flatform/chart-demo.png" alt="Chart Overview" class="chart-demo__image">
+
+              <!-- Control Demo (Absolute) -->
+              <img src="assets/images/multi_flatform/control-demo.png" alt="Control Panel" class="control-demo__image">
+
+              <!-- Menubar Demo (Absolute) -->
+              <img src="assets/images/multi_flatform/menubar-demo.png" alt="Navigation Menu"
+                class="menubar-demo__image">
+            </div>
+          </div>
+
+          <!-- Swiper Slide 2: Empty -->
+          <div class="multiplatform__slide swiper-slide">
+            <div class="slide-empty">
+              Slide 2 - Coming Soon
+            </div>
+          </div>
+
+          <!-- Swiper Slide 3: Empty -->
+          <div class="multiplatform__slide swiper-slide">
+            <div class="slide-empty">
+              Slide 3 - Coming Soon
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="multiplatform__controls">
+          <div class="multiplatform__swiper-pagination swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="multiplatform__features">
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <img src="assets/images/multi_flatform/ant-design_setting-filled.svg" alt="Setup & Vận hành" width="32"
+              height="32">
+          </div>
+          <h3 class="feature-card__title">Setup & Vận hành</h3>
+          <p class="feature-card__description">Triển khai chiến dịch bài bản, target đúng đối tượng mục tiêu.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <img src="assets/images/multi_flatform/fa7-solid_line-chart.svg" alt="Cam kết KPI" width="32" height="32">
+          </div>
+          <h3 class="feature-card__title">Cam kết KPI</h3>
+          <p class="feature-card__description">Làm việc dựa trên chỉ số hiệu quả thực tế.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <img src="assets/images/multi_flatform/streamline-plump_transparent-remix.svg" alt="Minh bạch 100%"
+              width="32" height="32">
+          </div>
+          <h3 class="feature-card__title">Minh bạch 100%</h3>
+          <p class="feature-card__description">Báo cáo ngắn sạch và hiệu quả chi tiết, rõ ràng.</p>
+        </div>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="multiplatform__cta">
+        <p class="multiplatform__cta-text">Chi phí theo <span class="highlight">% Ngân sách chạy</span> hoặc <span
+            class="highlight">Gói riêng</span></p>
+        <a href="#contact" class="multiplatform__cta-btn">Liên hệ nhận tư vấn</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SOCIAL CARE -->
+  <section class="multiplatform section" id="multiplatform-ads" aria-labelledby="multiplatform-heading">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="multiplatform__header">
+        <h2 class="multiplatform__title" id="multiplatform-heading">
+          <span class="highlight">Social Care</span>
+          <br>Hệ thống chăm sóc khách hàng tự động
+        </h2>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="socialcare__cta">
+        <p class="socialcare-text">Đừng để sót đơn hàng. Gom toàn bộ inbox/comment từ nhiều kênh về một màn hình duy
+          nhất, giúp nhân viên phản hồi nhanh
+          chóng và tăng tỷ lệ chốt đơn. </p>
+        <a href="#contact" class="socialcare__cta-btn">Dùng thử lên đến 30 ngày</a>
+      </div>
+
+      <!-- Swiper Container -->
+      <div class="multiplatform__swiper-container swiper">
+        <div class="multiplatform__swiper swiper-wrapper">
+
+          <!-- Swiper Slide 1: Ping.x Demo -->
+          <div class="multiplatform__slide swiper-slide">
+            <div class="socialcare-demo">
+              <div class="socialcare-demo__content">
+                <img src="assets/images/socialcare/pingx-demo.png" alt="Ping.x - Hợp nhất Inbox"
+                  class="socialcare-demo__image">
+                <div class="socialcare-demo__info">
+                  <h3 class="socialcare-demo__title">Ping.x - Hợp nhất Inbox</h3>
+                  <p class="socialcare-demo__description">Gom toàn bộ tin nhắn từ các nền tảng về một giao diện. Phân
+                    luồng tự động, xử lý hội thoại mượt mà không độ trễ.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper Slide 2: Empty -->
+          <div class="multiplatform__slide swiper-slide">
+            <div class="slide-empty">
+              Slide 2 - Coming Soon
+            </div>
+          </div>
+
+          <!-- Swiper Slide 3: Empty -->
+          <div class="multiplatform__slide swiper-slide">
+            <div class="slide-empty">
+              Slide 3 - Coming Soon
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="multiplatform__controls" style="bottom: 3% !important;">
+          <div class="multiplatform__swiper-pagination swiper-pagination"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REPORT REAL-TIME -->
+  <section class="multiplatform section" id="multiplatform-ads" aria-labelledby="multiplatform-heading">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="multiplatform__header">
+        <h2 class="multiplatform__title" id="multiplatform-heading">
+          Kiểm soát từng đồng chi phí với hệ thống
+          <span class="highlight">Báo cáo Real-time</span>
+        </h2>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="socialcare__cta">
+        <p class="socialcare-text">
+          Không còn nỗi lo "đốt tiền" vô ích. Chúng tôi cung cấp Dashboard dữ liệu minh bạch, giúp bạn ra quyết định
+          kinh doanh
+          chính xác.
+        </p>
+      </div>
+
+      <!-- Report Section Description -->
+      <div class="report-demo">
+        <div class="report-demo__content">
+          <div class="report-demo__image-wrapper">
+            <div class="report-demo__image-container">
+              <img src="assets/images/real_time/performance-demo.png" alt="Real-time Performance Monitor"
+                class="report-demo__image">
+            </div>
+          </div>
+          <div class="report-demo__info">
+            <h3 class="report-demo__title">Real-time Performance Monitor</h3>
+            <p class="report-demo__description">Theo dõi biến động doanh số, chi phí và hiệu quả quảng cáo cập nhật từng
+              giây. Ra quyết định tức thì dựa trên dữ liệu nóng.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Report Features Grid -->
+      <div class="report-features">
+        <div class="report-card">
+          <div class="report-card__image">
+            <img src="assets/images/real_time/cost-per-lead.png" alt="Cost Per Lead Chart">
+          </div>
+          <div class="report-card__content">
+            <h3 class="report-card__title">Minh bạch Cost Per Lead</h3>
+            <p class="report-card__description">Biết chính xác bạn trả bao nhiêu đồn cho mỗi khách hàng tiềm năng. Xem
+              ROI (Lợi nhuận)/Chi phí tối đa.</p>
+          </div>
+        </div>
+
+        <div class="report-card">
+          <div class="report-card__image">
+            <img src="assets/images/real_time/data-multiplatform.png" alt="Multi-platform Data Sync">
+          </div>
+          <div class="report-card__content">
+            <h3 class="report-card__title">Đồng bộ dữ liệu đa kênh</h3>
+            <p class="report-card__description">Tự động gom dữ liệu từ Facebook Ads, Google Ads, TikTok và Website vào
+              một màn hình duy nhất.</p>
+          </div>
+        </div>
+
+        <div class="report-card">
+          <div class="report-card__image">
+            <img src="assets/images/real_time/lead.png" alt="Lead Classification">
+          </div>
+          <div class="report-card__content">
+            <h3 class="report-card__title">Phân loại Lead</h3>
+            <p class="report-card__description">Hệ thống tự động gắn tag (Tag): Khách mới → Quan tâm → Đã chốt. Loại bỏ
+              data rác.</p>
+          </div>
+        </div>
+
+        <div class="report-card">
+          <div class="report-card__image">
+            <img src="assets/images/real_time/cost-per-lead.png" alt="Export Data">
+          </div>
+          <div class="report-card__content">
+            <h3 class="report-card__title">Export Dữ liệu</h3>
+            <p class="report-card__description">Xuất dữ liệu ra file Excel/PDF chi tiết để lưu trữ hoặc trình bày trong
+              cuộc họp.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CUSTOMER CARE MULTIPLATFORM -->
+  <section class="customercare section" id="customer-care" aria-labelledby="customercare-heading">
+    <div class="container">
+
+      <!-- Orbit Diagram -->
+      <div class="customercare__orbit">
+        <!-- Center Logo -->
+        <div class="orbit__center">
+          <img src="assets/images/customer_care/main-logo.svg" alt="Networld Solutions Logo" class="orbit__center-logo">
+        </div>
+
+        <!-- Orbit Rings -->
+        <div class="orbit__ring orbit__ring--1"></div>
+        <div class="orbit__ring orbit__ring--2"></div>
+        <div class="orbit__ring orbit__ring--3"></div>
+
+        <!-- Fade Overlay (Bottom) -->
+        <div class="orbit__fade-overlay"></div>
+
+        <!-- Inner Orbit -->
+        <div class="orbit__icon orbit__icon--pingx">
+          <img src="assets/images/customer_care/pingx-icon.svg" alt="Ping.X">
+        </div>
+        <div class="orbit__icon orbit__icon--zalo">
+          <img src="assets/images/customer_care/zalo-icon.svg" alt="Zalo">
+        </div>
+        <div class="orbit__icon orbit__icon--pagex">
+          <img src="assets/images/customer_care/pagex-icon.svg" alt="Page.X">
+        </div>
+        <div class="orbit__icon orbit__icon--instagram">
+          <img src="assets/images/customer_care/insta-icon.svg" alt="Instagram">
+        </div>
+
+        <!-- Middle Orbit -->
+        <div class="orbit__icon orbit__icon--fb">
+          <img src="assets/images/customer_care/fb-icon.svg" alt="Facebook">
+        </div>
+        <div class="orbit__icon orbit__icon--tiktok">
+          <img src="assets/images/customer_care/tiktok-icon.svg" alt="TikTok">
+        </div>
+
+        <!-- Outer Orbit -->
+        <div class="orbit__icon orbit__icon--buzzx">
+          <img src="assets/images/customer_care/buzzx-icon.svg" alt="Buzz.X">
+        </div>
+        <div class="orbit__icon orbit__icon--shopee">
+          <img src="assets/images/customer_care/shopee-icon.svg" alt="Shopee">
+        </div>
+      </div>
+
+      <!-- Section Header -->
+      <div class="customercare__header">
+        <h2 class="customercare__title" id="customercare-heading">
+          Tâm điểm chăm sóc khách hàng <span class="highlight">Đa kênh</span>
+        </h2>
+        <div class="customercare__description">
+          <p class="customercare__text">
+            Không cần chuyển tab liên tục. Giao tiếp mượt mà cùng Ping.X, phủ sóng nội dung tự động với
+            Page.X và kiểm soát chất chế mọi bình luận qua Buzz.X để không bỏ lỡ bất kỳ khách hàng nào.
+          </p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section" id="testimonials" aria-labelledby="testimonials-heading">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="testimonials__header">
+        <h2 class="testimonials__title" id="testimonials-heading">
+          Khách hàng nói về chúng tôi
+        </h2>
+      </div>
+
+      <!-- Testimonials Grid Wrapper -->
+      <div class="testimonials__wrapper">
+
+        <!-- Fade Overlay Top -->
+        <div class="testimonials__fade-top"></div>
+
+        <!-- Testimonials Grid -->
+        <div class="testimonials__grid">
+
+          <!-- Testimonial Card 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="assets/images/customer_cmt/kh1.svg" alt="Khách hàng A" class="testimonial-card__avatar">
+              <div class="testimonial-card__info">
+                <h3 class="testimonial-card__name">Khách hàng A</h3>
+                <p class="testimonial-card__role">Chức vụ</p>
+              </div>
+            </div>
+            <p class="testimonial-card__text">
+              "Sau khi dùng hệ thống Website + Social, team sales xử lý lead nhanh hơn 40%, chi phí ads giảm rõ rệt.
+              Quan
+              trọng nhất là tôi không còn bị sót đơn hàng từ Fanpage nữa."
+            </p>
+            <div class="testimonial-card__rating">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="assets/images/customer_cmt/kh2.svg" alt="Khách hàng A" class="testimonial-card__avatar">
+              <div class="testimonial-card__info">
+                <h3 class="testimonial-card__name">Khách hàng A</h3>
+                <p class="testimonial-card__role">Chức vụ</p>
+              </div>
+            </div>
+            <p class="testimonial-card__text">
+              "Sau khi dùng hệ thống Website + Social, team sales xử lý lead nhanh hơn 40%, chi phí ads giảm rõ rệt.
+              Quan
+              trọng nhất là tôi không còn bị sót đơn hàng từ Fanpage nữa."
+            </p>
+            <div class="testimonial-card__rating">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="assets/images/customer_cmt/kh3.svg" alt="Khách hàng A" class="testimonial-card__avatar">
+              <div class="testimonial-card__info">
+                <h3 class="testimonial-card__name">Khách hàng A</h3>
+                <p class="testimonial-card__role">Chức vụ</p>
+              </div>
+            </div>
+            <p class="testimonial-card__text">
+              "Sau khi dùng hệ thống Website + Social, team sales xử lý lead nhanh hơn 40%, chi phí ads giảm rõ rệt.
+              Quan
+              trọng nhất là tôi không còn bị sót đơn hàng từ Fanpage nữa."
+            </p>
+            <div class="testimonial-card__rating">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 4 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="assets/images/customer_cmt/kh4.svg" alt="Khách hàng A" class="testimonial-card__avatar">
+              <div class="testimonial-card__info">
+                <h3 class="testimonial-card__name">Khách hàng A</h3>
+                <p class="testimonial-card__role">Chức vụ</p>
+              </div>
+            </div>
+            <p class="testimonial-card__text">
+              "Sau khi dùng hệ thống Website + Social, team sales xử lý lead nhanh hơn 40%, chi phí ads giảm rõ rệt.
+              Quan
+              trọng nhất là tôi không còn bị sót đơn hàng từ Fanpage nữa."
+            </p>
+            <div class="testimonial-card__rating">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 5 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="assets/images/customer_cmt/kh5.svg" alt="Khách hàng A" class="testimonial-card__avatar">
+              <div class="testimonial-card__info">
+                <h3 class="testimonial-card__name">Khách hàng A</h3>
+                <p class="testimonial-card__role">Chức vụ</p>
+              </div>
+            </div>
+            <p class="testimonial-card__text">
+              "Sau khi dùng hệ thống Website + Social, team sales xử lý lead nhanh hơn 40%, chi phí ads giảm rõ rệt.
+              Quan
+              trọng nhất là tôi không còn bị sót đơn hàng từ Fanpage nữa."
+            </p>
+            <div class="testimonial-card__rating">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 6 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="assets/images/customer_cmt/kh1.svg" alt="Khách hàng A" class="testimonial-card__avatar">
+              <div class="testimonial-card__info">
+                <h3 class="testimonial-card__name">Khách hàng A</h3>
+                <p class="testimonial-card__role">Chức vụ</p>
+              </div>
+            </div>
+            <p class="testimonial-card__text">
+              "Sau khi dùng hệ thống Website + Social, team sales xử lý lead nhanh hơn 40%, chi phí ads giảm rõ rệt.
+              Quan
+              trọng nhất là tôi không còn bị sót đơn hàng từ Fanpage nữa."
+            </p>
+            <div class="testimonial-card__rating">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 7 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="assets/images/customer_cmt/kh2.svg" alt="Khách hàng A" class="testimonial-card__avatar">
+              <div class="testimonial-card__info">
+                <h3 class="testimonial-card__name">Khách hàng A</h3>
+                <p class="testimonial-card__role">Chức vụ</p>
+              </div>
+            </div>
+            <p class="testimonial-card__text">
+              "Sau khi dùng hệ thống Website + Social, team sales xử lý lead nhanh hơn 40%, chi phí ads giảm rõ rệt.
+              Quan
+              trọng nhất là tôi không còn bị sót đơn hàng từ Fanpage nữa."
+            </p>
+            <div class="testimonial-card__rating">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 8 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="assets/images/customer_cmt/kh3.svg" alt="Khách hàng A" class="testimonial-card__avatar">
+              <div class="testimonial-card__info">
+                <h3 class="testimonial-card__name">Khách hàng A</h3>
+                <p class="testimonial-card__role">Chức vụ</p>
+              </div>
+            </div>
+            <p class="testimonial-card__text">
+              "Sau khi dùng hệ thống Website + Social, team sales xử lý lead nhanh hơn 40%, chi phí ads giảm rõ rệt.
+              Quan
+              trọng nhất là tôi không còn bị sót đơn hàng từ Fanpage nữa."
+            </p>
+            <div class="testimonial-card__rating">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Testimonial Card 9 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card__header">
+              <img src="assets/images/customer_cmt/kh4.svg" alt="Khách hàng A" class="testimonial-card__avatar">
+              <div class="testimonial-card__info">
+                <h3 class="testimonial-card__name">Khách hàng A</h3>
+                <p class="testimonial-card__role">Chức vụ</p>
+              </div>
+            </div>
+            <p class="testimonial-card__text">
+              "Sau khi dùng hệ thống Website + Social, team sales xử lý lead nhanh hơn 40%, chi phí ads giảm rõ rệt.
+              Quan
+              trọng nhất là tôi không còn bị sót đơn hàng từ Fanpage nữa."
+            </p>
+            <div class="testimonial-card__rating">
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+              <svg class="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Fade Overlay Bottom -->
+        <div class="testimonials__fade-bottom"></div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- Swiper JS -->
+  <script src="assets/js/swiper-bundle.min.js"></script>
+
   <!-- Main JS (loads templates and initializes components) -->
   <script type="module" src="assets/js/main.js"></script>
+
+  <!-- Multiplatform Swiper Init -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const multiplatformSwiper = new Swiper('.multiplatform__swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        // autoplay: {
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // },
+        pagination: {
+          el: '.multiplatform__swiper-pagination',
+          clickable: true,
+          dynamicBullets: false,
+        },
+        grabCursor: true,
+        mousewheel: false,
+        keyboard: {
+          enabled: true,
+        },
+        effect: 'slide',
+        speed: 600,
+      });
+    });
+  </script>
 </body>
 
 </html>
