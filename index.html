@@ -634,11 +634,12 @@
   <section class="services section" id="dich-vu" aria-labelledby="services-heading">
     <div class="container">
       <div class="services-content">
+
         <!-- Left Column - Service Information -->
         <div class="services-info">
-          <h2 class="services-title">
+          <h2 class="services-title" id="services-heading">
             Thiết kế Website <span class="highlight">Chuẩn UI/UX</span><br>
-            & <span class="highlight">Tối ưu chuyển đổi</span>
+            &amp; <span class="highlight">Tối ưu chuyển đổi</span>
           </h2>
 
           <div class="services-list">
@@ -669,7 +670,7 @@
                 </svg>
               </div>
               <div class="service-content">
-                <h3 class="service-title">Hạ tầng chuẩn Ads & SEO và Tracking</h3>
+                <h3 class="service-title">Hạ tầng chuẩn Ads &amp; SEO và Tracking</h3>
                 <p class="service-description">
                   Cấu trúc code sạch, tốc độ tải nhanh giúp tăng điểm chất lượng quảng cáo. Tích hợp sẵn
                   hệ thống đo lường Google Analytics 4 để theo dõi hành vi và chuyển đổi.
@@ -696,7 +697,7 @@
             </div>
           </div>
 
-          <!-- Pricing Button -->
+          <!-- CTA Button -->
           <div class="services-pricing">
             <button class="pricing-btn">
               Giá từ: 15.000.000vnđ/page
@@ -705,45 +706,118 @@
         </div>
 
         <!-- Right Column - Website Mockup -->
-        <div class="services-mockup">
-          <div class="mockup-container">
-            <div class="browser-mockup">
-              <!-- Browser Header -->
-              <div class="browser-header">
-                <div class="browser-controls">
-                  <span class="control control-red"></span>
-                  <span class="control control-yellow"></span>
-                  <span class="control control-green"></span>
-                </div>
-                <div class="browser-url">
-                  <div class="url-bar">
-                    <span class="url-icon">🔵</span>
-                    <span class="url-line"></span>
-                  </div>
-                </div>
-              </div>
+        <div class="services-mockup services-mockup--website">
+          <img src="assets/images/services/img-website.webp" alt="Website UI/UX Mockup" class="services-mockup__img" />
+        </div>
 
-              <!-- Browser Content -->
-              <div class="browser-content">
-                <div class="content-placeholder">
-                  <div class="placeholder-image">
-                    <svg viewBox="0 0 100 60" fill="none">
-                      <rect width="100" height="60" fill="#f5f5f5" rx="4" />
-                      <rect x="20" y="20" width="60" height="20" fill="#e0e0e0" rx="2" />
-                    </svg>
-                  </div>
-                  <div class="content-lines">
-                    <div class="line"></div>
-                    <div class="line short"></div>
-                  </div>
-                  <div class="cta-button">
-                    CTA
-                  </div>
-                </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CMS -->
+  <section class="services services--white section" id="cms" aria-labelledby="cms-heading">
+    <div class="container">
+      <div class="services-content">
+
+        <!-- Left: Mockup image -->
+        <div class="services-mockup services-mockup--flat">
+          <img src="assets/images/services/img-cms.webp" alt="CMS – Hệ thống quản trị nội dung"
+            class="services-mockup__img" />
+        </div>
+
+        <!-- Right: Info -->
+        <div class="services-info">
+          <h2 class="services-title" id="cms-heading">
+            Hệ thống <span class="highlight">CMS</span><br>
+            Quản trị nội dung &amp; Vận hành
+          </h2>
+          <p class="service-description" style="margin-bottom: 3.2rem;">
+            Giải pháp phần mềm giúp bạn quản lý bài viết, phân quyền nhân sự và tối ưu hóa luồng công việc (Workflow)
+            một cách chuyên nghiệp.
+          </p>
+          <div class="services-pricing">
+            <a href="#contact" class="pricing-btn" id="btn-cms-learn-more">Tìm hiểu thêm</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- E-COMMERCE -->
+  <section class="services section" id="ecommerce" aria-labelledby="ecommerce-heading">
+    <div class="container">
+
+      <!-- Section Header: centered above 2-col layout -->
+      <div class="services-header--centered">
+        <h2 class="services-title services-title--centered" id="ecommerce-heading">
+          Nền tảng <span class="highlight">E-commerce</span><br>
+          Tối ưu chuyển đổi &amp; Tự động hóa bán hàng
+        </h2>
+      </div>
+
+      <div class="services-content">
+
+        <!-- Left: Info with feature list -->
+        <div class="services-info">
+          <div class="services-list">
+            <!-- Feature 1 -->
+            <div class="service-item">
+              <div class="service-icon">
+                <svg class="checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="9" fill="#4285f4" />
+                  <path d="m9 12 2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Quản trị &amp; Đồng bộ đa kênh</h3>
+                <p class="service-description">Quản lý tập trung tồn kho, giá cả, khuyến mãi và kết nối liền mạch với
+                  các sàn TMĐT (Shopee, Lazada…).</p>
+              </div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="service-item">
+              <div class="service-icon">
+                <svg class="checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="9" fill="#4285f4" />
+                  <path d="m9 12 2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Thanh toán &amp; Vận chuyển tự động</h3>
+                <p class="service-description">Tích hợp sẵn cổng thanh toán và đối tác vận chuyển, tự động hóa quy trình
+                  xử lý đơn hàng.</p>
+              </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="service-item">
+              <div class="service-icon">
+                <svg class="checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="9" fill="#4285f4" />
+                  <path d="m9 12 2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="service-content">
+                <h3 class="service-title">Báo cáo Dữ liệu thời gian thực (Real-time)</h3>
+                <p class="service-description">Theo dõi doanh thu, đơn hàng và tracking chiến dịch marketing trực quan
+                  ngay trên Dashboard.</p>
               </div>
             </div>
           </div>
+          <div class="services-pricing">
+            <a href="#contact" class="pricing-btn" id="btn-ecom-learn-more">Tìm hiểu thêm</a>
+          </div>
         </div>
+
+        <!-- Right: Mockup image -->
+        <div class="services-mockup services-mockup--flat">
+          <img src="assets/images/services/img-ecom.webp" alt="E-commerce Platform" class="services-mockup__img" />
+        </div>
+
       </div>
     </div>
   </section>
