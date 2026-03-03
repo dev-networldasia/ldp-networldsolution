@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="assets/css/testimonials.css" />
   <link rel="stylesheet" href="assets/css/advice.css" />
   <link rel="stylesheet" href="assets/css/freetrial.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/contact-form.css" />
 
 </head>
@@ -1810,140 +1811,65 @@
     </div>
   </section>
 
-  <!-- CONTACT FORM -->
-  <section class="contact section" id="contact" aria-labelledby="contact-heading">
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
 
-    <!-- BG Wave: full width of section -->
-    <img class="contact__wave" src="assets/images/bg-wave.png" alt="" aria-hidden="true" />
+      <!-- Footer Content Grid -->
+      <div class="footer__content">
 
-    <div class="container contact__container">
+        <!-- Column 1: Logo -->
+        <div class="footer__logo">
+          <img src="assets/images/nwa-footer.svg" alt="Networld Solutions Logo" class="footer__logo-image">
+          <nav class="footer__nav">
+            <div>
+              <a href="#dich-vu" class="footer__nav-link">Sản phẩm</a>
+              <a href="#dich-vu" class="footer__nav-link">Dịch vụ</a>
+            </div>
+            <div>
+              <a href="#pricing" class="footer__nav-link">Gói & Giá</a>
+              <a href="#about" class="footer__nav-link">Công ty</a>
+            </div>
+          </nav>
+        </div>
 
-      <!-- Left: Info -->
-      <div class="contact__info">
-        <h2 class="contact__title" id="contact-heading">Đăng ký tư vấn</h2>
-        <p class="contact__desc">
-          Kết nối ngay với chúng tôi để xây dựng lộ trình chuyển đổi số toàn diện: Từ hạ tầng Website đến vận hành Quảng
-          cáo và Chăm sóc khách hàng tự động.
-        </p>
-
-        <div class="contact__contact-block">
-          <p class="contact__contact-label">Liên hệ với chúng tôi</p>
-
-          <div class="contact__contact-item">
-            <span class="contact__contact-type">Hotline</span>
-            <a href="tel:+842873030568" class="contact__contact-value" id="contact-hotline">(+84) 287 303 0568</a>
+        <!-- Column 2: Hotline & Email -->
+        <div class="footer__contact">
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">Hotline</span>
+            <a href="tel:+842873030568" class="footer__contact-value">(+84) 287 303 0568</a>
           </div>
 
-          <div class="contact__contact-item">
-            <span class="contact__contact-type">Email</span>
-            <a href="mailto:contact@networldsolutions.net" class="contact__contact-value"
-              id="contact-email">contact@networldsolutions.net</a>
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">Email</span>
+            <a href="mailto:hello@networldasia.com" class="footer__contact-value">hello@networldasia.com</a>
           </div>
         </div>
+
+        <!-- Column 3: Address -->
+        <div class="footer__address">
+          <span class="footer__address-label">ĐỊA CHỈ</span>
+          <div class="footer__address-value">
+            369B-369C Lê Quang Định Street, Networld Asia Building, Binh Loi Trung Ward, Ho Chi Minh City, Viet Nam
+          </div>
+        </div>
+
+        <!-- Column 4: Copyright -->
+        <div class="footer__copyright">
+          © 2026 — Copyright Networld Solutions.
+        </div>
+
       </div>
 
-      <!-- Right: Form Card -->
-      <div class="contact__form-wrap">
-        <form class="contact-form" id="contact-form" novalidate>
+  </footer>
 
-          <!-- Tên người liên hệ -->
-          <div class="contact-form__field">
-            <label class="contact-form__label" for="cf-name">
-              <svg class="contact-form__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true">
-                <circle cx="10" cy="6" r="4" stroke="currentColor" stroke-width="1.5" />
-                <path d="M2 18c0-4 3.582-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.5"
-                  stroke-linecap="round" />
-              </svg>
-              Tên người liên hệ <span class="contact-form__required" aria-hidden="true">*</span>
-            </label>
-            <input class="contact-form__input" type="text" id="cf-name" name="name" placeholder="Nhập họ và tên"
-              required autocomplete="name" />
-          </div>
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.53027 15.0605L6.53027 1.06055M6.53027 1.06055L0.530273 7.06055M6.53027 1.06055L12.5303 7.06055"
+        stroke="white" stroke-width="1.5" />
+    </svg>
 
-          <!-- Tên doanh nghiệp -->
-          <div class="contact-form__field">
-            <label class="contact-form__label" for="cf-company">
-              <svg class="contact-form__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true">
-                <rect x="2" y="8" width="16" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5" />
-                <path d="M6 8V6a4 4 0 018 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                <path d="M7 13h2m2 0h2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
-              Tên doanh nghiệp
-            </label>
-            <input class="contact-form__input" type="text" id="cf-company" name="company"
-              placeholder="Nhập tên doanh nghiệp" autocomplete="organization" />
-          </div>
-
-          <!-- Số điện thoại -->
-          <div class="contact-form__field">
-            <label class="contact-form__label" for="cf-phone">
-              <svg class="contact-form__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true">
-                <path
-                  d="M4 2.5h3l1.5 4-2 1.5a10.5 10.5 0 004.5 4.5L12.5 10.5l4 1.5V15a1.5 1.5 0 01-1.5 1.5C6.5 16.5 3.5 9.5 3.5 4A1.5 1.5 0 014 2.5z"
-                  stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
-              </svg>
-              Số điện thoại <span class="contact-form__required" aria-hidden="true">*</span>
-            </label>
-            <input class="contact-form__input" type="tel" id="cf-phone" name="phone"
-              placeholder="Nhập số điện thoại người liên hệ" required autocomplete="tel" />
-          </div>
-
-          <!-- Bạn cần hỗ trợ gì -->
-          <div class="contact-form__field">
-            <label class="contact-form__label" for="cf-support">
-              <svg class="contact-form__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true">
-                <path
-                  d="M3 10a7 7 0 1114 0v1a2 2 0 01-2 2h-1a1 1 0 01-1-1V9a7 7 0 00-7 0v3a1 1 0 01-1 1H4a2 2 0 01-2-2v-1z"
-                  stroke="currentColor" stroke-width="1.5" />
-              </svg>
-              Bạn cần hỗ trợ gì <span class="contact-form__required" aria-hidden="true">*</span>
-            </label>
-            <div class="contact-form__select-wrap">
-              <select class="contact-form__select" id="cf-support" name="support" required>
-                <option value="" disabled selected>Chọn loại nội dung hỗ trợ</option>
-                <option value="website">Thiết kế &amp; Phát triển Website</option>
-                <option value="ads">Quảng cáo đa kênh</option>
-                <option value="social">Social Care &amp; Chăm sóc KH</option>
-                <option value="crm">CRM &amp; Marketing Automation</option>
-                <option value="report">Báo cáo &amp; Phân tích dữ liệu</option>
-                <option value="other">Khác</option>
-              </select>
-              <svg class="contact-form__chevron" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true">
-                <path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </div>
-          </div>
-
-          <!-- Nội dung cần hỗ trợ -->
-          <div class="contact-form__field">
-            <label class="contact-form__label" for="cf-message">
-              <svg class="contact-form__icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true">
-                <rect x="3" y="2" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.5" />
-                <path d="M6 6h8M6 9.5h8M6 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-              </svg>
-              Nội dung cần hỗ trợ
-            </label>
-            <textarea class="contact-form__textarea" id="cf-message" name="message"
-              placeholder="Nhập nội dung cần hỗ trợ" rows="4"></textarea>
-          </div>
-
-          <!-- Submit -->
-          <button class="contact-form__submit" type="submit" id="btn-contact-submit">
-            Đăng ký tư vấn
-          </button>
-
-        </form>
-      </div>
-
-    </div>
-  </section>
+  </button>
 
   <!-- Swiper JS -->
   <script src="assets/js/swiper-bundle.min.js"></script>
@@ -1995,6 +1921,30 @@
         },
         effect: 'slide',
         speed: 800,
+      });
+    });
+  </script>
+
+  <!-- Scroll to Top Functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+
+      // Show/hide button based on scroll position
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      });
+
+      // Smooth scroll to top when button is clicked
+      scrollToTopBtn.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     });
   </script>
