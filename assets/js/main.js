@@ -18,6 +18,94 @@ function initPricingCards() {
     });
 }
 
+// ── Buffer-style mouse parallax cho .tile-container ──────────────────────────
+const PARALLAX_SPRING = 0.08;
+const PARALLAX_DAMPING = 0.75;
+
+class AnimatedTile {
+    constructor(el) {
+        this.el = el;
+        this.maxOffset = parseFloat(el.dataset.max || 35);
+        this.radius = parseFloat(el.dataset.radius || 400);
+
+        this.x = 0; this.y = 0;
+        this.tx = 0; this.ty = 0;
+        this.vx = 0; this.vy = 0;
+
+        this._onMouseMove = this._onMouseMove.bind(this);
+        window.addEventListener('mousemove', this._onMouseMove, { passive: true });
+        requestAnimationFrame(() => this._loop());
+    }
+
+    _onMouseMove(e) {
+        const rect = this.el.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dx = e.clientX - cx;
+        const dy = e.clientY - cy;
+        const dist = Math.hypot(dx, dy);
+
+        if (dist < this.radius) {
+            const ratio = dist <= this.maxOffset ? 1 : this.maxOffset / dist;
+            this.tx = dx * ratio;
+            this.ty = dy * ratio;
+        } else {
+            this.tx = 0;
+            this.ty = 0;
+        }
+    }
+
+    _loop() {
+        this.vx += (this.tx - this.x) * PARALLAX_SPRING;
+        this.vy += (this.ty - this.y) * PARALLAX_SPRING;
+        this.vx *= PARALLAX_DAMPING;
+        this.vy *= PARALLAX_DAMPING;
+        this.x += this.vx;
+        this.y += this.vy;
+        this.el.style.transform = `translate3d(${this.x.toFixed(2)}px,${this.y.toFixed(2)}px,0)`;
+        requestAnimationFrame(() => this._loop());
+    }
+}
+
+function initParallax() {
+    document.querySelectorAll('.tile-container').forEach(el => new AnimatedTile(el));
+    console.log('✓ Parallax initialized');
+}
+
+// ── Stats Counting Animation ──────────────────────────────────────────────────
+function initCounter() {
+    const counters = document.querySelectorAll('.stat-item__number');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const targetEl = entry.target;
+                const targetValue = +targetEl.getAttribute('data-target');
+                let count = 0;
+                const speed = 40; // adjusting speed
+                const inc = targetValue / speed;
+
+                const updateCount = () => {
+                    count += inc;
+                    if (count < targetValue) {
+                        targetEl.innerText = Math.ceil(count);
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        targetEl.innerText = targetValue;
+                    }
+                };
+
+                updateCount();
+                obs.unobserve(targetEl);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+    console.log('✓ Counter initialized');
+}
+
 // Template loading function
 async function loadTemplate(templateName, templateDefName) {
     try {
@@ -36,9 +124,8 @@ async function loadTemplate(templateName, templateDefName) {
             const defineName = defineMatch[1];
 
             // Find and replace template placeholder in body HTML
-            // Support both {{template "..."}} and {{ template "..." }}
             const bodyHTML = document.body.innerHTML;
-            const regex = new RegExp(`<!--[^>]*-->\s*\{\{\s*template\s+["']${defineName}["']\s*\}\}`, 'g');
+            const regex = new RegExp(`<!--[^>]*-->\\s*\\{\\{\\s*template\\s+["']${defineName}["']\\s*\\}\\}`, 'g');
             const newHTML = bodyHTML.replace(regex, content);
 
             if (bodyHTML !== newHTML) {
@@ -89,6 +176,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     setTimeout(() => {
         initHeader();
         initPricingCards();
+        initParallax();
+        initCounter();
         console.log('✓ Components initialized');
-    }, 100); // Small delay to ensure DOM is updated
+    }, 100);
 });

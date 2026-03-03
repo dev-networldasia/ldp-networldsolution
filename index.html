@@ -25,6 +25,7 @@
   <!-- Section CSS (each team member owns their section's CSS) -->
   <link rel="stylesheet" href="assets/css/header.css" />
   <link rel="stylesheet" href="assets/css/hero.css" />
+  <link rel="stylesheet" href="assets/css/trust-metrics.css" />
   <link rel="stylesheet" href="assets/css/services.css" />
   <link rel="stylesheet" href="assets/css/pricing.css" />
   <link rel="stylesheet" href="assets/css/multiplatform.css" />
@@ -114,40 +115,147 @@
   <!-- HERO -->
   <section class="hero" id="hero" aria-labelledby="hero-heading">
 
-    <!-- ── Decorative background (blobs + waves matching Figma) ── -->
-    <div class="hero__bg" aria-hidden="true">
-      <div class="hero__blob hero__blob--1"></div>
-      <div class="hero__blob hero__blob--2"></div>
-      <div class="hero__blob hero__blob--3"></div>
+    <!-- ── Parallax Decoration: Layer 1 – Emoji Tiles (blur + mờ) ── -->
+    <div class="decoration-grid-container" aria-hidden="true" style="--tile-size:54px">
 
-      <!-- Wave layer 1 -->
-      <svg class="hero__wave hero__wave--1" viewBox="0 0 1440 300" preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path fill="rgba(26,111,244,0.08)"
-          d="M0,200 C180,160 360,240 540,200 C720,160 900,240 1080,210 C1260,180 1350,220 1440,200 L1440,300 L0,300 Z" />
-      </svg>
+      <!-- Emoji Leading (trái) -->
+      <div class="decoration-grid leading">
+        <div class="tile-container" style="grid-column:5; grid-row:2" data-max="28" data-radius="500">
+          <div class="emoji-tile" data-theme="coral">👏</div>
+        </div>
+        <div class="tile-container" style="grid-column:3; grid-row:5" data-max="22" data-radius="500">
+          <div class="emoji-tile" data-theme="purple">🚀</div>
+        </div>
+        <div class="tile-container" style="grid-column:5; grid-row:7" data-max="30" data-radius="500">
+          <div class="emoji-tile" data-theme="yellow">❤️</div>
+        </div>
+        <div class="tile-container" style="grid-column:4; grid-row:9" data-max="18" data-radius="500">
+          <div class="emoji-tile" data-theme="aqua">📈</div>
+        </div>
+        <div class="tile-container" style="grid-column:9; grid-row:3" data-max="25" data-radius="500">
+          <div class="emoji-tile" data-theme="green">🌱</div>
+        </div>
+      </div>
 
-      <!-- Wave layer 2 (lighter, offset) -->
-      <svg class="hero__wave hero__wave--2" viewBox="0 0 1440 300" preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path fill="rgba(26,111,244,0.05)"
-          d="M0,240 C200,200 400,260 600,230 C800,200 1000,260 1200,235 C1320,220 1380,245 1440,235 L1440,300 L0,300 Z" />
-      </svg>
-    </div>
+      <!-- Emoji Trailing (phải) -->
+      <div class="decoration-grid trailing">
+        <div class="tile-container" style="grid-column:3; grid-row:2" data-max="28" data-radius="500">
+          <div class="emoji-tile" data-theme="green">📣</div>
+        </div>
+        <div class="tile-container" style="grid-column:5; grid-row:5" data-max="22" data-radius="500">
+          <div class="emoji-tile" data-theme="fuscia">💬</div>
+        </div>
+        <div class="tile-container" style="grid-column:4; grid-row:7" data-max="30" data-radius="500">
+          <div class="emoji-tile" data-theme="coral">🤳</div>
+        </div>
+        <div class="tile-container" style="grid-column:6; grid-row:4" data-max="18" data-radius="500">
+          <div class="emoji-tile" data-theme="blue">🗓️</div>
+        </div>
+        <div class="tile-container" style="grid-column:5; grid-row:9" data-max="25" data-radius="500">
+          <div class="emoji-tile" data-theme="aqua">🙌</div>
+        </div>
+      </div>
+
+    </div><!-- /Layer 1 -->
+
+    <!-- ── Parallax Decoration: Layer 2 – Channel + Logo Tiles ── -->
+    <div class="decoration-grid-container" aria-hidden="true" style="--tile-size:54px">
+
+      <!-- Channel Leading (trái) -->
+      <div class="decoration-grid leading">
+        <!-- Instagram – góc trên trái -->
+        <div class="tile-container" style="grid-column:4; grid-row:1" data-max="35" data-radius="500">
+          <div class="channel-tile" style="color:#c13584">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M20.387 3.653C19.34 2.565 17.847 2 16.153 2H7.847C4.339 2 2 4.339 2 7.847v8.266c0 1.734.565 3.226 1.694 4.314C4.782 21.476 6.234 22 7.887 22h8.226c1.734 0 3.185-.564 4.234-1.573C21.435 19.38 22 17.887 22 16.153V7.847c0-1.694-.564-3.145-1.613-4.194Zm-.161 12.5c0 1.25-.444 2.258-1.17 2.944-.725.685-1.733 1.048-2.943 1.048H7.887c-1.21 0-2.218-.363-2.943-1.048-.726-.726-1.09-1.734-1.09-2.984V7.847c0-1.21.364-2.218 1.09-2.944.685-.685 1.733-1.048 2.943-1.048h8.306c1.21 0 2.218.363 2.944 1.089.686.725 1.089 1.733 1.089 2.903v8.306Zm-1.694-9.476a1.17 1.17 0 1 1-2.339 0 1.17 1.17 0 0 1 2.339 0ZM6.838 11.96c0-2.863 2.34-5.162 5.162-5.162s5.161 2.34 5.161 5.162S14.863 17.12 12 17.12a5.146 5.146 0 0 1-5.162-5.161Zm1.855 0A3.321 3.321 0 0 0 12 15.266a3.321 3.321 0 0 0 3.306-3.306A3.321 3.321 0 0 0 12 8.653a3.321 3.321 0 0 0-3.307 3.307Z" />
+            </svg>
+          </div>
+        </div>
+        <!-- PingX Logo – ngang heading line 1 -->
+        <div class="tile-container" style="grid-column:7; grid-row:3" data-max="35" data-radius="500">
+          <div class="logo-tile logo-tile--pingx">
+            <img src="assets/images/hero-section/pingx-logo.png" alt="PingX" />
+          </div>
+        </div>
+        <!-- Facebook – dưới subtitle -->
+        <div class="tile-container" style="grid-column:5; grid-row:5" data-max="35" data-radius="500">
+          <div class="channel-tile" style="color:#1877f2">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.971h-1.513c-1.491 0-1.956.93-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z" />
+            </svg>
+          </div>
+        </div>
+        <!-- X – dưới subtitle -->
+        <div class="tile-container" style="grid-column:5; grid-row:8" data-max="35" data-radius="500">
+          <div class="channel-tile">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M13.903 10.469 21.348 2h-1.764l-6.465 7.353L7.955 2H2l7.808 11.12L2 22h1.764l6.828-7.765L16.044 22H22l-8.097-11.531Zm-2.417 2.748-.791-1.107L4.4 3.3h2.71l5.08 7.11.791 1.107 6.604 9.242h-2.71l-5.389-7.542Z" />
+            </svg>
+          </div>
+        </div>
+        <!-- Youtube – ngang heading line 2 -->
+        <div class="tile-container" style="grid-column:3; grid-row:6" data-max="25" data-radius="500">
+          <div class="channel-tile" style="color:#ff0000">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23.76 7.148s-.234-1.68-.954-2.42c-.912-.97-1.935-.974-2.404-1.031-3.359-.247-8.397-.247-8.397-.247h-.01s-5.038 0-8.397.247c-.469.057-1.491.061-2.404 1.032-.72.74-.954 2.42-.954 2.42S0 9.12 0 11.092v1.85c0 1.971.24 3.944.24 3.944s.234 1.68.954 2.42c.913.97 2.112.939 2.646 1.04 1.92.188 8.16.246 8.16.246s5.043-.008 8.402-.255c.469-.056 1.492-.06 2.404-1.032.72-.74.954-2.42.954-2.42s.24-1.972.24-3.944v-1.85c0-1.971-.24-3.944-.24-3.944ZM9.523 15.183V8.335l6.484 3.435-6.484 3.413Z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Channel Trailing (phải) -->
+      <div class="decoration-grid trailing">
+        <!-- BuzzX Logo – ngang heading line 1, phải -->
+        <div class="tile-container" style="grid-column:8; grid-row:2" data-max="35" data-radius="500">
+          <div class="logo-tile logo-tile--buzzx">
+            <img src="assets/images/hero-section/buzzx-logo.png" alt="BuzzX" />
+          </div>
+        </div>
+        <!-- PageX Logo – ngang heading line 2, phải -->
+        <div class="tile-container" style="grid-column:7; grid-row:5" data-max="35" data-radius="500">
+          <div class="logo-tile logo-tile--pagex">
+            <img src="assets/images/hero-section/pagex-logo.png" alt="PageX" />
+          </div>
+        </div>
+        <!-- Zalo – góc trên phải -->
+        <div class="tile-container" style="grid-column:3; grid-row:1" data-max="35" data-radius="500">
+          <div class="channel-tile" style="color:#ff0000">
+            <img src="assets/images/hero-section/Icon_of_Zalo.png" alt="Zalo" />
+          </div>
+        </div>
+        <!-- Tiktok – giữa phải -->
+        <div class="tile-container" style="grid-column:5; grid-row:5" data-max="35" data-radius="500">
+          <div class="channel-tile">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M16.1 1c.347 3.122 2.01 4.983 4.9 5.181v3.511c-1.675.172-3.142-.402-4.849-1.485v6.568c0 8.342-8.677 10.95-12.166 4.97-2.242-3.848-.87-10.6 6.322-10.87v3.702c-.548.092-1.133.237-1.668.429-1.6.567-2.507 1.63-2.255 3.505.485 3.59 6.77 4.653 6.247-2.363V1.007h3.47V1Z" />
+            </svg>
+          </div>
+        </div>
+        <!-- LinkedIn – dưới subtitle -->
+        <div class="tile-container" style="grid-column:3; grid-row:8" data-max="35" data-radius="500">
+          <div class="channel-tile" style="color:#0a66c2">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M18.338 18.338H15.67v-4.177c0-.997-.018-2.278-1.387-2.278-1.39 0-1.602 1.085-1.602 2.206v4.25h-2.668v-8.59h2.561v1.173h.036c.356-.675 1.227-1.388 2.526-1.388 2.703 0 3.202 1.78 3.202 4.092v4.712ZM7.004 8.574a1.548 1.548 0 1 1 0-3.097 1.548 1.548 0 0 1 0 3.097ZM5.67 18.338h2.67v-8.59h-2.67v8.59ZM19.668 3H4.328C3.597 3 3 3.581 3 4.297v15.404C3 20.418 3.596 21 4.329 21h15.339c.734 0 1.332-.582 1.332-1.299V4.297C21 3.581 20.402 3 19.668 3Z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /Layer 2 -->
 
     <!-- ── Main content ── -->
     <div class="hero__content">
 
-      <!-- Eyebrow label -->
-      <p class="hero__eyebrow">
-        <span class="hero__eyebrow-dot"></span>
-        Được bảo trợ bởi Networld Asia
-      </p>
-
-      <!-- Main heading (2 lines as per Figma) -->
+      <!-- Main heading -->
       <h1 class="hero__title" id="hero-heading">
-        MỘT NỀN TẢNG
-        <span class="hero__title--highlight">XỬ LÝ MỌI ĐIỂM CHẠM</span>
+        Một nền tảng
+        <span class="hero__title--highlight">xử lý mọi điểm chạm</span>
       </h1>
 
       <!-- Supporting text -->
@@ -155,20 +263,365 @@
         Hệ sinh thái Web - Ads - Social - Data. Tối giản vận hành, tối đa hiệu suất.
       </p>
 
-      <!-- CTA row: outline + primary (Figma layout) -->
-      <!-- <div class="hero__actions">
-        <a href="#pricing" class="btn btn--outline btn--sm" id="btn-hero-pricing">
-          Bảng giá dịch vụ
-        </a>
-        <a href="#contact" class="btn btn--primary btn--sm" id="btn-hero-cta">
-          <span>Dùng thử ngay</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-            <path d="M5 12H19" />
-            <path d="M12 5L19 12L12 19" />
-          </svg>
-        </a>
-      </div> -->
+    </div>
+
+    <!-- ── 4 Service Cards ── -->
+    <div class="hero__cards" aria-label="Dịch vụ của chúng tôi">
+
+      <!-- Card 1: Thiết kế Website -->
+      <article class="hero-card" id="hero-card-website">
+        <h3 class="hero-card__title">Thiết kế Website</h3>
+        <p class="hero-card__subtitle">Chuẩn UI/UX &amp; Tối ưu chuyển đổi</p>
+        <img class="hero-card__img" src="assets/images/hero-section/thiet-ke-website.webp"
+          alt="Thiết kế Website Preview" />
+      </article>
+
+      <!-- Card 2: CMS - E-commerce -->
+      <article class="hero-card" id="hero-card-cms">
+        <h3 class="hero-card__title">CMS - E-commerce</h3>
+        <p class="hero-card__subtitle">Quản lý shop, bài viết tập trung đa kênh</p>
+        <img class="hero-card__img" src="assets/images/hero-section/cms.webp" alt="CMS E-commerce Preview" />
+      </article>
+
+      <!-- Card 3: Quảng cáo đa kênh -->
+      <article class="hero-card" id="hero-card-ads">
+        <h3 class="hero-card__title">Quảng cáo đa kênh</h3>
+        <p class="hero-card__subtitle">Tối ưu chi phí &amp; Cam kết chuyển đổi</p>
+        <img class="hero-card__img" src="assets/images/hero-section/quang-cao-da-kenh.webp"
+          alt="Quảng cáo đa kênh Preview" />
+      </article>
+
+      <!-- Card 4: Social Care -->
+      <article class="hero-card" id="hero-card-social">
+        <h3 class="hero-card__title">Social Care</h3>
+        <p class="hero-card__subtitle">Chăm sóc khách hàng đa kênh trên một nền tảng</p>
+        <img class="hero-card__img" src="assets/images/hero-section/social-care.webp" alt="Social Care Preview" />
+      </article>
+
+    </div><!-- /.hero__cards -->
+
+  </section>
+
+  <!-- TRUST & LOGOS -->
+  <section class="trust" aria-labelledby="trust-heading">
+    <h2 class="trust__title" id="trust-heading">Được tin chọn bởi hơn 500+ doanh nghiệp</h2>
+    <div class="trust__marquee-container">
+      <div class="trust__marquee">
+        <div class="trust__marquee-content">
+          <div class="item-logo"><img src="assets/images/logo-branch/Abbott-png-300x77.png" alt="Abbott png 300x77" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/airfrance.png" alt="airfrance" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/AstraZeneca-300x73.webp"
+              alt="AstraZeneca 300x73" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/bmw.png" alt="bmw" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Care-png.png" alt="Care png" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Citibank-png-300x188.png"
+              alt="Citibank png 300x188" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/coway-logo.png" alt="coway logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/cuckoo-logo.png" alt="cuckoo logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Danisa.webp" alt="Danisa" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/dermatix-png.png" alt="dermatix png" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Enervon-c-scaled-1-300x212.webp"
+              alt="Enervon c scaled 1 300x212" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/friso-logo.png" alt="friso logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/hdbank-300px.png" alt="hdbank 300px" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Hung-Loc-Phat-300x234.png"
+              alt="Hung Loc Phat 300x234" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Johnson-png-300x90.png" alt="Johnson png 300x90" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/karofi.png" alt="karofi" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/KIA_logo3.svg" alt="KIA logo3" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/lenovo.jpeg" alt="lenovo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/logo-kun.png" alt="logo kun" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/LOreal-png-300x188.png" alt="LOreal png 300x188" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/macallan-png-1.webp" alt="macallan png 1" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/maybi-logo.png" alt="maybi logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Michelin-png-1-300x188.webp"
+              alt="Michelin png 1 300x188" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/namabank.png" alt="namabank" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/novartis.png" alt="novartis" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/OPV-png.png" alt="OPV png" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/pocky.png" alt="pocky" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Sanofi-300x63.webp" alt="Sanofi 300x63" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/sapporo.png" alt="sapporo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/schneider.png" alt="schneider" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Shiseido_logo.png" alt="Shiseido logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/TCL-png-300px.png" alt="TCL png 300px" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/thtruemilk.jpeg" alt="thtruemilk" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/uniben.png" alt="uniben" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Vietnam_Airlines-png-scaled-1-300x42.webp" alt="Vietnam Airlines png scaled 1 300x42" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Zespri_Kiwifruit-png-300x240.png"
+              alt="Zespri Kiwifruit png 300x240" /></div>
+        </div>
+        <div class="trust__marquee-content" aria-hidden="true">
+          <div class="item-logo"><img src="assets/images/logo-branch/Abbott-png-300x77.png" alt="Abbott png 300x77" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/airfrance.png" alt="airfrance" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/AstraZeneca-300x73.webp"
+              alt="AstraZeneca 300x73" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/bmw.png" alt="bmw" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Care-png.png" alt="Care png" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Citibank-png-300x188.png"
+              alt="Citibank png 300x188" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/coway-logo.png" alt="coway logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/cuckoo-logo.png" alt="cuckoo logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Danisa.webp" alt="Danisa" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/dermatix-png.png" alt="dermatix png" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Enervon-c-scaled-1-300x212.webp"
+              alt="Enervon c scaled 1 300x212" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/friso-logo.png" alt="friso logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/hdbank-300px.png" alt="hdbank 300px" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Hung-Loc-Phat-300x234.png"
+              alt="Hung Loc Phat 300x234" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Johnson-png-300x90.png" alt="Johnson png 300x90" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/karofi.png" alt="karofi" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/KIA_logo3.svg" alt="KIA logo3" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/lenovo.jpeg" alt="lenovo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/logo-kun.png" alt="logo kun" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/LOreal-png-300x188.png" alt="LOreal png 300x188" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/macallan-png-1.webp" alt="macallan png 1" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/maybi-logo.png" alt="maybi logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Michelin-png-1-300x188.webp"
+              alt="Michelin png 1 300x188" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/namabank.png" alt="namabank" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/novartis.png" alt="novartis" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/OPV-png.png" alt="OPV png" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/pocky.png" alt="pocky" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Sanofi-300x63.webp" alt="Sanofi 300x63" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/sapporo.png" alt="sapporo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/schneider.png" alt="schneider" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Shiseido_logo.png" alt="Shiseido logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/TCL-png-300px.png" alt="TCL png 300px" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/thtruemilk.jpeg" alt="thtruemilk" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/uniben.png" alt="uniben" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Vietnam_Airlines-png-scaled-1-300x42.webp"
+              alt="Vietnam Airlines png scaled 1 300x42" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Zespri_Kiwifruit-png-300x240.png"
+              alt="Zespri Kiwifruit png 300x240" /></div>
+        </div>
+      </div>
+      <div class="trust__marquee trust__marquee--reverse">
+        <div class="trust__marquee-content">
+          <div class="item-logo"><img src="assets/images/logo-branch/acb.png" alt="acb" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Alaxan-300x225.png" alt="Alaxan 300x225" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Baemin-png-300x150.webp"
+              alt="Baemin png 300x150" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/caltex.png" alt="caltex" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Carlsberg.webp" alt="Carlsberg" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/citibank.png" alt="citibank" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/coway.png" alt="coway" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/cuckoo.png" alt="cuckoo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Danone-png-232x300.webp"
+              alt="Danone png 232x300" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/dutchlady-logo.png" alt="dutchlady logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Envy-300x125.png" alt="Envy 300x125" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Greenfeed-300x235.png" alt="Greenfeed 300x235" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/hiruscar-logo.png" alt="hiruscar logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Huyndai-png-300x200.webp"
+              alt="Huyndai png 300x200" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/K+.jpg" alt="K+" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/kbank.png" alt="kbank" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/large-logo.png" alt="large logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/logo-cafepho.png" alt="logo cafepho" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/logo-sensacool-1.png" alt="logo sensacool 1" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/loreal.png" alt="loreal" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/macallan.png" alt="macallan" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Mega-we-care-png-300x137.webp"
+              alt="Mega we care png 300x137" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Motul-png-300x214.png" alt="Motul png 300x214" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Naver-png-300x58.png" alt="Naver png 300x58" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/nutifood.png" alt="nutifood" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/pharmaceuticals.jpg" alt="pharmaceuticals" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/roche.png" alt="roche" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/sanofi.png" alt="sanofi" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/SCB-png-300x124.png" alt="SCB png 300x124" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Shema-1.webp" alt="Shema 1" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/siemens.jpeg" alt="siemens" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/techcom.png" alt="techcom" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/traphaco.png" alt="traphaco" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/vedan-png-300x78.png" alt="vedan png 300x78" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/vinasoy-300px.png" alt="vinasoy 300px" /></div>
+        </div>
+        <div class="trust__marquee-content" aria-hidden="true">
+          <div class="item-logo"><img src="assets/images/logo-branch/acb.png" alt="acb" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Alaxan-300x225.png" alt="Alaxan 300x225" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Baemin-png-300x150.webp"
+              alt="Baemin png 300x150" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/caltex.png" alt="caltex" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Carlsberg.webp" alt="Carlsberg" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/citibank.png" alt="citibank" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/coway.png" alt="coway" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/cuckoo.png" alt="cuckoo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Danone-png-232x300.webp"
+              alt="Danone png 232x300" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/dutchlady-logo.png" alt="dutchlady logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Envy-300x125.png" alt="Envy 300x125" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Greenfeed-300x235.png" alt="Greenfeed 300x235" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/hiruscar-logo.png" alt="hiruscar logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Huyndai-png-300x200.webp"
+              alt="Huyndai png 300x200" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/K+.jpg" alt="K+" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/kbank.png" alt="kbank" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/large-logo.png" alt="large logo" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/logo-cafepho.png" alt="logo cafepho" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/logo-sensacool-1.png" alt="logo sensacool 1" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/loreal.png" alt="loreal" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/macallan.png" alt="macallan" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Mega-we-care-png-300x137.webp"
+              alt="Mega we care png 300x137" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Motul-png-300x214.png" alt="Motul png 300x214" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Naver-png-300x58.png" alt="Naver png 300x58" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/nutifood.png" alt="nutifood" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/pharmaceuticals.jpg" alt="pharmaceuticals" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/roche.png" alt="roche" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/sanofi.png" alt="sanofi" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/SCB-png-300x124.png" alt="SCB png 300x124" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Shema-1.webp" alt="Shema 1" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/siemens.jpeg" alt="siemens" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/techcom.png" alt="techcom" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/traphaco.png" alt="traphaco" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/vedan-png-300x78.png" alt="vedan png 300x78" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/vinasoy-300px.png" alt="vinasoy 300px" /></div>
+        </div>
+      </div>
+      <div class="trust__marquee">
+        <div class="trust__marquee-content">
+          <div class="item-logo"><img src="assets/images/logo-branch/airasia.png" alt="airasia" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/arena-pharma.png" alt="arena pharma" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/bidv.png" alt="bidv" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/cao-300px.png" alt="cao 300px" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Chuk-chuk-png-300x58.png"
+              alt="Chuk chuk png 300x58" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Coway-300x74.webp" alt="Coway 300x74" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/cuckoo-2.webp" alt="cuckoo 2" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/daikin-300px.png" alt="daikin 300px" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Decolgen-300x150.webp" alt="Decolgen 300x150" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Emirates-png-300x188.webp"
+              alt="Emirates png 300x188" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/foodempire.png" alt="foodempire" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/GSKpng-300x258.webp" alt="GSKpng 300x258" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/hongleongbank.png" alt="hongleongbank" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/hyundai.png" alt="hyundai" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/K.webp" alt="K" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Kia-png-300x300.png" alt="Kia png 300x300" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/lavender.png" alt="lavender" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/logo-keppel.png" alt="logo keppel" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Logo_cong_ty_sunhouse.png"
+              alt="Logo cong ty sunhouse" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/mac.png" alt="mac" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/marico.png" alt="marico" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Merap-new-1-scaled-1-300x70.webp"
+              alt="Merap new 1 scaled 1 300x70" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/msd.svg" alt="msd" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/nike.png" alt="nike" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/OPV-pharma.png" alt="OPV pharma" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Philips-png-300x55.png" alt="Philips png 300x55" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/ROHTO-png-300x112.png" alt="ROHTO png 300x112" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/saporro-png-1-300x55.webp"
+              alt="saporro png 1 300x55" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/scb.png" alt="scb" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Shema-baby.webp" alt="Shema baby" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Soffell-Logo-small.png" alt="Soffell Logo small" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/teva.png" alt="teva" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/ulike.png" alt="ulike" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/vedan.png" alt="vedan" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Xisat-1.webp" alt="Xisat 1" /></div>
+        </div>
+        <div class="trust__marquee-content" aria-hidden="true">
+          <div class="item-logo"><img src="assets/images/logo-branch/airasia.png" alt="airasia" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/arena-pharma.png" alt="arena pharma" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/bidv.png" alt="bidv" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/cao-300px.png" alt="cao 300px" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Chuk-chuk-png-300x58.png"
+              alt="Chuk chuk png 300x58" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Coway-300x74.webp" alt="Coway 300x74" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/cuckoo-2.webp" alt="cuckoo 2" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/daikin-300px.png" alt="daikin 300px" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Decolgen-300x150.webp" alt="Decolgen 300x150" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Emirates-png-300x188.webp"
+              alt="Emirates png 300x188" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/foodempire.png" alt="foodempire" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/GSKpng-300x258.webp" alt="GSKpng 300x258" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/hongleongbank.png" alt="hongleongbank" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/hyundai.png" alt="hyundai" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/K.webp" alt="K" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Kia-png-300x300.png" alt="Kia png 300x300" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/lavender.png" alt="lavender" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/logo-keppel.png" alt="logo keppel" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Logo_cong_ty_sunhouse.png"
+              alt="Logo cong ty sunhouse" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/mac.png" alt="mac" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/marico.png" alt="marico" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Merap-new-1-scaled-1-300x70.webp"
+              alt="Merap new 1 scaled 1 300x70" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/msd.svg" alt="msd" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/nike.png" alt="nike" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/OPV-pharma.png" alt="OPV pharma" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Philips-png-300x55.png" alt="Philips png 300x55" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/ROHTO-png-300x112.png" alt="ROHTO png 300x112" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/saporro-png-1-300x55.webp"
+              alt="saporro png 1 300x55" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/scb.png" alt="scb" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Shema-baby.webp" alt="Shema baby" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Soffell-Logo-small.png" alt="Soffell Logo small" />
+          </div>
+          <div class="item-logo"><img src="assets/images/logo-branch/teva.png" alt="teva" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/ulike.png" alt="ulike" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/vedan.png" alt="vedan" /></div>
+          <div class="item-logo"><img src="assets/images/logo-branch/Xisat-1.webp" alt="Xisat 1" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS COUNTING -->
+  <section class="stats" aria-labelledby="stats-heading">
+    <h2 class="stats__title" id="stats-heading">
+      Hiện thực hóa quy trình tăng trưởng<br />
+      với Bộ giải pháp <span class="stats__title-highlight">All-in-One</span>
+    </h2>
+    <p class="stats__subtitle">
+      Hạ tầng vững chắc. Vận hành thông minh. Tăng trưởng bền vững.<br />
+      Hãy chọn dịch vụ phù hợp để bắt đầu ngay hôm nay.
+    </p>
+
+    <div class="stats__grid">
+      <div class="stat-item">
+        <span class="stat-item__number" data-target="40">0</span>
+        <span class="stat-item__label">Hiệu suất vận hành</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-item__number" data-target="25">0</span>
+        <span class="stat-item__label">Tỷ suất lợi nhuận (ROI)</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-item__number" data-target="100">0</span>
+        <span class="stat-item__label">Khả năng tiếp cận</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-item__number" data-target="30">0</span>
+        <span class="stat-item__label">Tỷ lệ chuyển đổi (CR)</span>
+      </div>
     </div>
   </section>
 

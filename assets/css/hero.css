@@ -1,5 +1,5 @@
 /* ============================================================
-   HERO.CSS – Hero Section (matches Figma design)
+   HERO.CSS – Hero Section
    Networld Asia – Digital Marketing Landing Page
    ============================================================ */
 
@@ -12,167 +12,77 @@
     justify-content: center;
     padding-top: var(--navbar-h);
     padding-bottom: 0;
-    background: var(--gradient-hero-bg);
     overflow: hidden;
+
+    /* ── Crosshair dashed grid (SVG tile 80×80) ── */
+    /* Pattern: dấu "+" tại mỗi giao điểm + đường nét đứt nối giữa */
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3C!-- H dashed --%3E%3Cline x1='7' y1='0' x2='73' y2='0' stroke='%23BAD2FF' stroke-opacity='.4' stroke-width='1' stroke-dasharray='4 5'/%3E%3C!-- V dashed --%3E%3Cline x1='0' y1='7' x2='0' y2='73' stroke='%23BAD2FF' stroke-opacity='.4' stroke-width='1' stroke-dasharray='4 5'/%3E%3C!-- TL corner --%3E%3Cline x1='0' y1='0' x2='6' y2='0' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='0' y1='0' x2='0' y2='6' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C!-- TR corner --%3E%3Cline x1='74' y1='0' x2='80' y2='0' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='80' y1='0' x2='80' y2='6' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C!-- BL corner --%3E%3Cline x1='0' y1='74' x2='0' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='0' y1='80' x2='6' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C!-- BR corner --%3E%3Cline x1='74' y1='80' x2='80' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='80' y1='74' x2='80' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 80px 80px;
+    background-position: 0 0;
+    background-repeat: repeat;
 }
 
-/* ========== Background decorations ========== */
-.hero__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-/* Animated blobs */
-.hero__blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    animation: blobFloat 10s ease-in-out infinite alternate;
-}
-
-.hero__blob--1 {
-    width: 560px;
-    height: 560px;
-    background: radial-gradient(circle, rgba(26, 111, 244, 0.22) 0%, transparent 65%);
-    top: -140px;
-    right: -80px;
-    animation-delay: 0s;
-}
-
-.hero__blob--2 {
-    width: 420px;
-    height: 420px;
-    background: radial-gradient(circle, rgba(0, 212, 255, 0.18) 0%, transparent 65%);
-    bottom: 100px;
-    left: -60px;
-    animation-delay: 3s;
-}
-
-.hero__blob--3 {
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(26, 111, 244, 0.12) 0%, transparent 65%);
-    top: 40%;
-    left: 42%;
-    animation-delay: 6s;
-}
-
-@keyframes blobFloat {
-    0% {
-        transform: translate(0px, 0px) scale(1);
-    }
-
-    100% {
-        transform: translate(28px, -32px) scale(1.06);
-    }
-}
-
-/* Wave SVG layers */
-.hero__wave {
+/* ── Wave background stitched to bottom ───────────────────── */
+.hero::after {
+    content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: auto;
-}
-
-.hero__wave--1 {
-    bottom: 30px;
-}
-
-.hero__wave--2 {
-    bottom: 0px;
+    height: 280px;
+    background: url('../images/hero-section/wave-bg.png') center bottom / cover no-repeat;
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* ========== Content area ========== */
 .hero__content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
-    /* max-width: 720px; */
+    max-width: 820px;
     margin-inline: auto;
     padding-inline: var(--container-pad);
     text-align: center;
     padding-top: var(--space-2xl);
-    padding-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
 }
 
-/* Eyebrow */
-.hero__eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: var(--font-base);
-    font-weight: 500;
-    color: var(--color-primary);
-    margin-bottom: var(--space-lg);
+/* Main heading */
+.hero__title {
+    font-size: clamp(3.2rem, 5.4vw, 5.6rem);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    letter-spacing: -0.01em;
+    margin-bottom: 0;
     opacity: 0;
     animation: fadeInUp 0.55s ease forwards;
     animation-delay: 0.1s;
+    text-transform: uppercase;
 }
 
-.hero__eyebrow-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    flex-shrink: 0;
-    animation: pulseDot 2.2s ease-in-out infinite;
-}
-
-@keyframes pulseDot {
-
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(26, 111, 244, 0.4);
-    }
-
-    50% {
-        opacity: 0.7;
-        transform: scale(1.3);
-        box-shadow: 0 0 0 5px rgba(26, 111, 244, 0);
-    }
-}
-
-/* Main heading - matching Figma */
-.hero__title {
-    font-size: clamp(3.1rem, 5.2vw, 5.6rem);
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--color-text-primary);
-    letter-spacing: -0.02em;
-    margin-bottom: 6px;
-    opacity: 0;
-    animation: fadeInUp 0.55s ease forwards;
-    animation-delay: 0.22s;
-}
-
-/* Blue gradient second line – matches Figma "Kiến Tạo & Vận Hành trọn gói." */
+/* Blue gradient second line */
 .hero__title--highlight {
     display: block;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-transform: uppercase;
 }
 
 /* Subtitle */
 .hero__subtitle {
-    font-size: clamp(1.55rem, 1.6vw, 2rem);
+    font-size: clamp(1.4rem, 1.5vw, 1.7rem);
     color: var(--color-text-secondary);
     line-height: 1.75;
-    max-width: 50%;
     margin-inline: auto;
-    margin-top: var(--space-lg);
-    margin-bottom: var(--space-xl);
+    margin-top: var(--space-md);
     opacity: 0;
     animation: fadeInUp 0.55s ease forwards;
-    animation-delay: 0.36s;
+    animation-delay: 0.22s;
 }
 
 /* ========== CTA Buttons ========== */
@@ -180,14 +90,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 16px;
     flex-wrap: wrap;
     opacity: 0;
     animation: fadeInUp 0.55s ease forwards;
-    animation-delay: 0.5s;
+    animation-delay: 0.36s;
 }
 
-/* Arrow icon inside primary button */
 .hero__actions .btn--primary svg {
     transition: transform var(--transition-base);
 }
@@ -196,49 +105,268 @@
     transform: translateX(5px);
 }
 
-/* ========== Stats bar ========== */
-.hero__stats {
+/* ========== 4 Service Cards ========== */
+.hero__cards {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
     padding-inline: var(--container-pad);
+    padding-top: var(--space-xl);
+    padding-bottom: 48px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    opacity: 0;
+    animation: fadeInUp 0.55s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.hero-card {
+    position: relative;
+    background: #ffffff;
+    border: 8px solid #BAD2FF4D;
+    border-radius: 16px;
+    text-align: center;
+    padding: 20px 18px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow: hidden;
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+    aspect-ratio: 1;
+}
+
+.hero-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(12, 94, 255, 0.12);
+    border-color: rgba(186, 210, 255, 0.65);
+}
+
+.hero-card__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+}
+
+.hero-card__subtitle {
+    font-size: 1.2rem;
+    color: #0C5EFF;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.hero-card__img {
+    margin-top: 12px;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px 8px 0 0;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* ============================================================
+   PARALLAX DECORATION GRID
+   Nền trắng + đường kẻ nét đứt
+   ============================================================ */
+
+.decoration-grid-container {
+    --tile-size: 54px;
+    --bg-color: #ffffff;
+    --grid-line-color: rgba(186, 210, 255, 0.55);
+
+    position: absolute;
+    /* Bắt đầu ngay dưới navbar — row 1 tương ứng vùng trên heading */
+    top: var(--navbar-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    pointer-events: none;
+    z-index: 0;
+    /* Chỉ fade out ở phía dưới (vùng cards) */
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 80%);
+    mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 80%);
+}
+
+.decoration-grid {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(auto-fill, var(--tile-size));
+    grid-auto-rows: var(--tile-size);
+    gap: 12px;
+    align-content: start;
+}
+
+/* Nửa TRÁI: fade outer-left + inner-right (gần tâm trang) để không đè heading */
+.decoration-grid.leading {
+    direction: rtl;
+    background-image:
+        linear-gradient(to top,
+            var(--bg-color) 0%,
+            transparent 18%,
+            transparent 82%,
+            var(--bg-color) 100%),
+        /* Outer edge fade (rìa trái) */
+        linear-gradient(to right,
+            var(--bg-color) 0%,
+            transparent 20%),
+        /* Inner edge fade (rìa phải / gần center) – tránh đè heading */
+        linear-gradient(to left,
+            var(--bg-color) 0%,
+            transparent 28%);
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+}
+
+/* Nửa PHẢI: fade outer-right + inner-left (gần tâm trang) để không đè heading */
+.decoration-grid.trailing {
+    direction: ltr;
+    background-image:
+        linear-gradient(to top,
+            var(--bg-color) 0%,
+            transparent 18%,
+            transparent 82%,
+            var(--bg-color) 100%),
+        /* Outer edge fade (rìa phải) */
+        linear-gradient(to left,
+            var(--bg-color) 0%,
+            transparent 20%),
+        /* Inner edge fade (rìa trái / gần center) – tránh đè heading */
+        linear-gradient(to right,
+            var(--bg-color) 0%,
+            transparent 28%);
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+}
+
+/* Tile container */
+.tile-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-2xl);
-    padding-block: var(--space-2xl);
-    opacity: 0;
-    animation: fadeInUp 0.55s ease forwards;
-    animation-delay: 0.64s;
+    width: var(--tile-size);
+    height: var(--tile-size);
+    will-change: transform;
+    overflow: visible;
+    /* logo-tile lớn hơn tile vẫn hiển được */
 }
 
-.hero__stat {
-    text-align: center;
+/* Layer 1 – Emoji Tiles (mờ) */
+.emoji-tile {
+    width: calc(var(--tile-size) * 0.75);
+    height: calc(var(--tile-size) * 0.75);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    filter: blur(2px);
+    opacity: 0.4;
+}
+
+.emoji-tile[data-theme="coral"] {
+    background: #f5b8b8;
+}
+
+.emoji-tile[data-theme="purple"] {
+    background: #c9a8e0;
+}
+
+.emoji-tile[data-theme="yellow"] {
+    background: #f5e09a;
+}
+
+.emoji-tile[data-theme="aqua"] {
+    background: #8de8d4;
+}
+
+.emoji-tile[data-theme="green"] {
+    background: #8fddb0;
+}
+
+.emoji-tile[data-theme="blue"] {
+    background: #90c4e8;
+}
+
+.emoji-tile[data-theme="fuscia"] {
+    background: #f0a0c8;
+}
+
+/* Layer 2 – Channel Tiles: hình TRÒN (giống hình tham chiếu) */
+.channel-tile {
+    width: var(--tile-size);
+    height: var(--tile-size);
+    border-radius: 50%;
+    /* ← Hình tròn */
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.13),
+        0 1px 4px rgba(0, 0, 0, 0.08);
+    opacity: 0.92;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+}
+
+.channel-tile svg {
+    width: 32px;
+    height: 32px;
+}
+
+.channel-tile img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Layer 3 – Logo Tiles (pagex, pingx, buzzx) – lớn hơn, nổi bật hơn */
+.logo-tile {
+    width: 80px;
+    height: 80px;
     flex-shrink: 0;
+    /* ngăn flex container co chiều ngang → giữ tỉ lệ vuông */
+    border-radius: 20px;
+    background: linear-gradient(145deg, #ecf0f8 0%, #dde4f2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3.5px solid #ffffff;
+    box-shadow:
+        0 8px 24px rgba(12, 94, 255, 0.18),
+        0 2px 8px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(186, 210, 255, 0.35);
+    position: relative;
+    z-index: 3;
 }
 
-.hero__stat-value {
-    display: block;
-    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
-    font-weight: 800;
-    color: var(--color-primary);
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+.logo-tile img {
+    width: 68%;
+    height: 68%;
+    object-fit: contain;
 }
 
-.hero__stat-label {
-    display: block;
-    font-size: var(--font-sm);
-    color: var(--color-text-muted);
-    margin-top: 5px;
-    white-space: nowrap;
+/* Transform rotate cho từng logo cụ thể (giống thiết kế) */
+.logo-tile--pingx {
+    transform: rotate(-12deg);
 }
 
-.hero__stat-divider {
-    width: 1px;
-    height: 44px;
-    background: var(--color-border);
-    flex-shrink: 0;
+.logo-tile--buzzx {
+    transform: rotate(15deg);
+}
+
+.logo-tile--pagex {
+    transform: rotate(-10deg);
 }
 
 /* ========== Keyframes ========== */
@@ -255,32 +383,27 @@
 }
 
 /* ========== Responsive ========== */
+@media (max-width: 960px) {
+    .hero__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         min-height: auto;
-        padding-bottom: 0;
     }
 
     .hero__content {
         padding-top: var(--space-xl);
     }
 
-    .hero__stats {
-        gap: var(--space-xl);
-    }
-
-    .hero__blob--1 {
-        width: 360px;
-        height: 360px;
-    }
-
-    .hero__blob--2 {
-        width: 280px;
-        height: 280px;
-    }
-
-    .hero__blob--3 {
+    .decoration-grid-container {
         display: none;
+    }
+
+    .hero::after {
+        height: 160px;
     }
 }
 
@@ -294,14 +417,7 @@
         justify-content: center;
     }
 
-    .hero__stats {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: var(--space-lg);
-        padding-bottom: var(--space-xl);
-    }
-
-    .hero__stat-divider {
-        display: none;
+    .hero__cards {
+        grid-template-columns: 1fr;
     }
 }

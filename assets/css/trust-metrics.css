@@ -1,0 +1,197 @@
+/* ==========================================================================
+   Trust & Metrics Sections
+   ========================================================================== */
+
+/* Trust Marquee Section */
+.trust {
+    padding: var(--space-3xl) 0;
+    background-color: var(--color-surface);
+    overflow: hidden;
+    position: relative;
+    border-bottom: 0.1rem solid var(--color-border);
+}
+
+.trust::before,
+.trust::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 25rem;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.trust::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-surface), transparent);
+}
+
+.trust::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-surface), transparent);
+}
+
+.trust__title {
+    text-align: center;
+    font-size: var(--font-lg);
+    font-weight: 600;
+    color: var(--color-text-third);
+    margin-bottom: var(--space-xl);
+}
+
+.trust__marquee-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.trust__marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--space-2xl);
+}
+
+.trust__marquee-content {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 100%;
+    gap: var(--space-2xl);
+    animation: scroll 90s linear infinite;
+}
+
+.trust__marquee--reverse .trust__marquee-content {
+    animation-direction: reverse;
+}
+
+.item-logo {
+    width: 12.9rem;
+}
+
+.trust__marquee-content img {
+    margin: 0 auto;
+    height: 7.5rem;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(0%) opacity(70%);
+    transition: filter var(--transition-base), transform var(--transition-base);
+}
+
+.trust__marquee-content img:hover {
+    filter: grayscale(0%) opacity(100%);
+    transform: scale(1.05);
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - var(--space-2xl)));
+    }
+}
+
+/* Stats Counting Section */
+.stats {
+    padding: var(--space-4xl) 0;
+    background-color: var(--color-surface);
+    text-align: center;
+    position: relative;
+    /* Dotted grid background */
+    background-image:
+        radial-gradient(var(--color-border) 0.15rem, transparent 0.15rem);
+    background-size: 3.2rem 3.2rem;
+}
+
+.stats__title {
+    font-size: clamp(var(--font-2xl), 4vw, var(--font-4xl));
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
+}
+
+.stats__title-highlight {
+    color: var(--color-primary);
+}
+
+.stats__subtitle {
+    font-size: clamp(var(--font-base), 1.5vw, var(--font-md));
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4xl);
+    line-height: 1.6;
+    max-width: 60rem;
+    margin-inline: auto;
+}
+
+.stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-lg);
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+}
+
+.stat-item {
+    padding: var(--space-lg);
+}
+
+.stat-item__number {
+    font-size: var(--font-5xl);
+    font-weight: 800;
+    color: var(--color-text-third);
+    margin-bottom: var(--space-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-item__number::before {
+    content: "+";
+}
+
+.stat-item__number::after {
+    content: "%";
+}
+
+.stat-item__label {
+    font-size: var(--font-md);
+    color: var(--color-text-muted);
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .stats {
+        padding: var(--space-3xl) 0;
+    }
+
+    .stats__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trust__title {
+        font-size: var(--font-base);
+    }
+
+    .trust__marquee-content img {
+        height: 3rem;
+    }
+
+    .trust::before,
+    .trust::after {
+        width: 5rem;
+    }
+}
