@@ -6,7 +6,7 @@
 /* Services Section */
 .services {
     padding: 80px 0;
-    background: #F7F7F7;
+    background: #ffffff;
     position: relative;
     overflow: hidden;
 }
@@ -37,7 +37,8 @@
 
 /* Left Column - Service Information */
 .services-info {
-    max-width: 600px;
+    /* max-width: 600px; */
+    position: relative;
 }
 
 .services-title {
@@ -52,6 +53,17 @@
     color: #0C5EFF;
 }
 
+/* Services centered header (E-commerce) */
+.services-header--centered {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.services-title--centered {
+    max-width: 100%;
+    text-align: center;
+}
+
 /* Services List */
 .services-list {
     margin-bottom: 40px;
@@ -61,8 +73,7 @@
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    padding: 24px 0;
-    /* border-bottom: 1px solid rgba(0, 0, 0, 0.05); */
+    padding: 14px 0;
     position: relative;
 }
 
@@ -285,26 +296,81 @@
     letter-spacing: 0.5px;
 }
 
+/* ── Modifier: white background (CMS section) ── */
+.services--white {
+    background: #ffffff;
+}
+
+.services--white::before {
+    display: none;
+}
+
+/* ── Modifier: reverse column order (mockup left, text right) ── */
+.services-content--reverse {
+    direction: rtl;
+}
+
+.services-content--reverse>* {
+    direction: ltr;
+}
+
+/* ── Modifier: flat mockup – real screenshot with white card bg ── */
+.services-mockup--flat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2.4rem;
+    box-shadow: 0 0.8rem 3.2rem rgba(10, 22, 40, 0.07);
+}
+
+.services-mockup--flat .mockup-container {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+.services-mockup__img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.6rem;
+    display: block;
+}
+
+/* ── Modifier: website – no bg/shadow, align bottom ── */
+.services-mockup--website {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.services-mockup--website .services-mockup__img {
+    border-radius: 0;
+    box-shadow: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .services {
         padding: 60px 0;
     }
-    
+
     .services-content {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
     }
-    
+
     .services-title {
         font-size: 2rem;
     }
-    
+
     .service-item {
         text-align: left;
     }
-    
+
     .browser-mockup {
         transform: none;
         max-width: 350px;
@@ -315,17 +381,17 @@
     .services-title {
         font-size: 1.75rem;
     }
-    
+
     .service-item {
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
     }
-    
+
     .service-price {
         margin-left: 0;
     }
-    
+
     .pricing-btn {
         width: 100%;
         text-align: center;
