@@ -1,0 +1,246 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   ADVICE SWIPER SECTION
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.advice {
+  position: relative;
+  min-height: 600px;
+  padding: 80px 0;
+  background-image: url('../images/advice.png');
+  background-size: cover;
+  background-position: center left;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.advice::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 1;
+}
+
+.advice .container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-height: 500px;
+}
+
+/* ── Section Header ── */
+.advice__header {
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.advice__title {
+font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* ── Content Wrapper with Navigation ── */
+.advice__content {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ── Swiper Container ── */
+.advice__swiper-container {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* ── Advice Card ── */
+.advice-card {
+  background: transparent;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Card Image - Hidden as it's part of background ── */
+.advice-card__image {
+  display: none;
+}
+
+/* ── Card Content ── */
+.advice-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.advice-card__quote {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #fff;
+  margin: 0;
+  font-style: normal;
+  position: relative;
+  padding: 0;
+  text-align: justify;
+}
+
+.advice-card__author {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.advice-card__name {
+  font-size: 16px;
+font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+.advice-card__role {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* ── Swiper Navigation ── */
+.advice__swiper-button {
+    flex-shrink: 0;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.advice__swiper-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+.advice__swiper-button svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+
+.advice .swiper {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .advice__header {
+    width: 60%;
+  }
+  
+  .advice__content {
+    width: 60%;
+  }
+
+  .advice__title {
+    font-size: 30px;
+  }
+
+  .advice-card__quote {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .advice {
+    padding: 60px 0;
+    background-position: center;
+  }
+
+  .advice::before {
+    background: rgba(0, 0, 0, 0.7);
+  }
+
+  .advice .container {
+    align-items: center;
+  }
+
+  .advice__header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .advice__content {
+    width: 100%;
+    gap: 15px;
+  }
+
+  .advice__title {
+    font-size: 32px;
+  }
+
+  .advice-card__quote {
+    font-size: 16px;
+  }
+
+  .advice__swiper-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .advice__swiper-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .advice {
+    min-height: 500px;
+  }
+
+  .advice__title {
+    font-size: 28px;
+  }
+
+  .advice-card__quote {
+    font-size: 15px;
+  }
+
+  .advice-card__name {
+    font-size: 14px;
+  }
+
+  .advice-card__role {
+    font-size: 13px;
+  }
+
+  .advice__content {
+    gap: 10px;
+  }
+
+  .advice__swiper-button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .advice__swiper-button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
