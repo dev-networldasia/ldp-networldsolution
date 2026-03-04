@@ -31,7 +31,7 @@
     left: 0;
     width: 100%;
     height: 280px;
-    background: url('../images/hero-section/wave-bg.png') center bottom / cover no-repeat;
+    background: url('../images/hero-section/bg-wave.jpg') center bottom / cover no-repeat;
     pointer-events: none;
     z-index: 0;
 }
@@ -140,6 +140,10 @@
         box-shadow 0.28s ease,
         border-color 0.28s ease;
     aspect-ratio: 1;
+    /* Reset anchor styles */
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .hero-card:hover {
@@ -163,9 +167,8 @@
 }
 
 .hero-card__img {
-    margin-top: 12px;
     width: 100%;
-    height: 160px;
+    height: 62%;
     object-fit: cover;
     object-position: top;
     border-radius: 8px 8px 0 0;
@@ -186,7 +189,6 @@
     --grid-line-color: rgba(186, 210, 255, 0.55);
 
     position: absolute;
-    /* Bắt đầu ngay dưới navbar — row 1 tương ứng vùng trên heading */
     top: var(--navbar-h);
     left: 0;
     right: 0;
@@ -196,7 +198,6 @@
     grid-template-columns: 1fr 1fr;
     pointer-events: none;
     z-index: 0;
-    /* Chỉ fade out ở phía dưới (vùng cards) */
     -webkit-mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 80%);
     mask-image: linear-gradient(to bottom, black 0%, black 58%, transparent 80%);
 }
@@ -210,7 +211,7 @@
     align-content: start;
 }
 
-/* Nửa TRÁI: fade outer-left + inner-right (gần tâm trang) để không đè heading */
+/* Nửa TRÁI: fade outer-left + inner-right mạnh hơn để không đè heading */
 .decoration-grid.leading {
     direction: rtl;
     background-image:
@@ -222,15 +223,15 @@
         /* Outer edge fade (rìa trái) */
         linear-gradient(to right,
             var(--bg-color) 0%,
-            transparent 20%),
+            transparent 22%),
         /* Inner edge fade (rìa phải / gần center) – tránh đè heading */
         linear-gradient(to left,
             var(--bg-color) 0%,
-            transparent 28%);
+            transparent 40%);
     background-size: 100% 100%, 100% 100%, 100% 100%;
 }
 
-/* Nửa PHẢI: fade outer-right + inner-left (gần tâm trang) để không đè heading */
+/* Nửa PHẢI: fade outer-right + inner-left mạnh hơn để không đè heading */
 .decoration-grid.trailing {
     direction: ltr;
     background-image:
@@ -242,11 +243,11 @@
         /* Outer edge fade (rìa phải) */
         linear-gradient(to left,
             var(--bg-color) 0%,
-            transparent 20%),
+            transparent 22%),
         /* Inner edge fade (rìa trái / gần center) – tránh đè heading */
         linear-gradient(to right,
             var(--bg-color) 0%,
-            transparent 28%);
+            transparent 40%);
     background-size: 100% 100%, 100% 100%, 100% 100%;
 }
 
@@ -335,7 +336,6 @@
     width: 80px;
     height: 80px;
     flex-shrink: 0;
-    /* ngăn flex container co chiều ngang → giữ tỉ lệ vuông */
     border-radius: 20px;
     background: linear-gradient(145deg, #ecf0f8 0%, #dde4f2 100%);
     display: flex;
@@ -398,8 +398,26 @@
         padding-top: var(--space-xl);
     }
 
+    /* Tablet: thu nhỏ tile xuống 36px */
     .decoration-grid-container {
-        display: none;
+        --tile-size: 36px;
+        opacity: 0.6;
+    }
+
+    .decoration-grid {
+        gap: 8px;
+    }
+
+    .channel-tile svg,
+    .channel-tile img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .logo-tile {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
     }
 
     .hero::after {
@@ -418,6 +436,44 @@
     }
 
     .hero__cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding-inline: 12px;
+    }
+
+    .hero-card {
+        border-width: 5px;
+        padding: 14px 10px 0;
+        border-radius: 12px;
+    }
+
+    .hero-card__title {
+        font-size: 1.25rem;
+    }
+
+    .hero-card__subtitle {
+        font-size: 1.05rem;
+    }
+
+    .decoration-grid-container {
+        --tile-size: 24px;
+        opacity: 0.35;
+    }
+
+    .decoration-grid {
+        gap: 5px;
+    }
+
+    .channel-tile svg,
+    .channel-tile img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .logo-tile {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        border-width: 2px;
     }
 }

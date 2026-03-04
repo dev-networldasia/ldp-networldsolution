@@ -34,7 +34,7 @@
 
 .trust__title {
     text-align: center;
-    font-size: var(--font-lg);
+    font-size: var(--font-xl);
     font-weight: 600;
     color: var(--color-text-third);
     margin-bottom: var(--space-xl);
@@ -165,6 +165,11 @@
     font-weight: 500;
 }
 
+/* All-in-One không xuống dòng */
+.stats__title-highlight {
+    white-space: nowrap;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .stats__grid {
@@ -174,16 +179,53 @@
 }
 
 @media (max-width: 768px) {
+
+    /* Ẩn br chỉ hiện trên desktop */
+    .br--desktop {
+        display: none;
+    }
+
     .stats {
         padding: var(--space-3xl) 0;
     }
 
     .stats__grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    .stat-item {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .stat-item__number {
+        font-size: var(--font-3xl);
+        margin-bottom: 4px;
+    }
+
+    .stat-item__label {
+        font-size: var(--font-sm);
+    }
+
+    .trust {
+        padding: var(--space-xl) 0;
     }
 
     .trust__title {
         font-size: var(--font-base);
+        margin-bottom: var(--space-md);
+    }
+
+    .trust__marquee {
+        gap: var(--space-md);
+    }
+
+    .trust__marquee-content {
+        gap: var(--space-md);
+    }
+
+    .item-logo {
+        width: 8rem;
     }
 
     .trust__marquee-content img {
@@ -192,6 +234,25 @@
 
     .trust::before,
     .trust::after {
-        width: 5rem;
+        width: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .trust__marquee-content {
+        gap: var(--space-sm);
+    }
+
+    .item-logo {
+        width: 6.5rem;
+    }
+
+    .trust__marquee-content img {
+        height: 2.4rem;
+    }
+
+    .trust::before,
+    .trust::after {
+        width: 2.5rem;
     }
 }
