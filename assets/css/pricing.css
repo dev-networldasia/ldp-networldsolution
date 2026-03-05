@@ -53,7 +53,7 @@
 
 /* ---------- Cards grid ---------- */
 .pricing__swiper {
-    overflow: hidden;
+    overflow: unset;
 }
 
 .pricing__grid {
@@ -90,7 +90,6 @@
     background: #EDF6FF;
     border-color: rgba(12, 94, 255, 0.25);
     box-shadow: 0 0.6rem 2.4rem rgba(12, 94, 255, 0.09);
-    transform: translateY(-0.2rem);
 }
 
 /* Active state – toggled by JS click */
@@ -104,7 +103,6 @@
 
 .pricing-card--active:hover {
     box-shadow: 0 1.4rem 4.8rem rgba(12, 94, 255, 0.22);
-    transform: translateY(-0.3rem);
 }
 
 /* ---------- Card header (name + badge) ---------- */
@@ -266,6 +264,10 @@
         /* Swiper cần flex */
     }
 
+    .pricing__swiper {
+        overflow: hidden;
+    }
+
     .pricing__swiper-pagination {
         display: block;
         margin-top: 2.4rem;
@@ -291,6 +293,10 @@
     .pricing-card--active,
     .pricing-card--featured {
         order: 0;
+    }
+
+    .pricing__grid {
+        gap: 0;
     }
 }
 

@@ -1,0 +1,413 @@
+/* ── E-Commerce Hero ── */
+.ec-hero {
+    min-height: 100svh;
+    padding-top: var(--navbar-h);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    /* ── Crosshair dashed grid (SVG tile 80x80) from home hero ── */
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3C!-- H dashed --%3E%3Cline x1='7' y1='0' x2='73' y2='0' stroke='%23BAD2FF' stroke-opacity='.4' stroke-width='1' stroke-dasharray='4 5'/%3E%3C!-- V dashed --%3E%3Cline x1='0' y1='7' x2='0' y2='73' stroke='%23BAD2FF' stroke-opacity='.4' stroke-width='1' stroke-dasharray='4 5'/%3E%3C!-- TL corner --%3E%3Cline x1='0' y1='0' x2='6' y2='0' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='0' y1='0' x2='0' y2='6' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C!-- TR corner --%3E%3Cline x1='74' y1='0' x2='80' y2='0' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='80' y1='0' x2='80' y2='6' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C!-- BL corner --%3E%3Cline x1='0' y1='74' x2='0' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='0' y1='80' x2='6' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C!-- BR corner --%3E%3Cline x1='74' y1='80' x2='80' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='80' y1='74' x2='80' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 80px 80px;
+    background-position: 0 0;
+    background-repeat: repeat;
+}
+
+/* Wave background stitched to bottom */
+.ec-hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 480px;
+    background: url('../../images/page-ecommerce/bg-ecommerce.png') center bottom / contain no-repeat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ec-hero__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-2xl);
+    width: 100%;
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-pad);
+    padding-bottom: 400px;
+    /* space for the background image */
+}
+
+/* ── Center Text & Elements ── */
+.ec-hero__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+}
+
+.ec-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--font-xs);
+    font-weight: 600;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.ec-hero__eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 2.4rem;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+}
+
+.ec-hero__heading {
+    font-size: clamp(3.6rem, 5vw, 5.6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.ec-hero__heading-accent {
+    display: block;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ec-hero__heading-main {
+    display: block;
+    color: var(--color-text-primary);
+}
+
+.ec-hero__desc {
+    font-size: var(--font-base);
+    color: var(--color-text-muted);
+    line-height: 1.75;
+    max-width: 44rem;
+}
+
+.ec-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+
+.ec-hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 1.4rem 3.2rem;
+    background: var(--color-primary);
+    color: var(--color-text-white);
+    font-size: var(--font-base);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    text-decoration: none;
+    transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    box-shadow: 0 0.4rem 2rem rgba(12, 94, 255, 0.35);
+}
+
+.ec-hero__cta:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 0.8rem 2.8rem rgba(12, 94, 255, 0.45);
+}
+
+.ec-hero__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--font-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.ec-hero__link:hover {
+    color: var(--color-primary);
+}
+
+/* Stats row */
+.ec-hero__stats {
+    display: flex;
+    gap: var(--space-xl);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-xs);
+}
+
+.ec-hero__stat-value {
+    font-size: var(--font-xl);
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.ec-hero__stat-label {
+    font-size: var(--font-xs);
+    color: var(--color-text-muted);
+    margin-top: 0.4rem;
+}
+
+/* ── Right: 3D Illustration ── */
+.ec-hero__visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ec-hero__illustration {
+    width: 100%;
+    max-width: 62rem;
+    height: auto;
+    filter: drop-shadow(0 2rem 6rem rgba(12, 94, 255, 0.15));
+    animation: ec-float 6s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes ec-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Glow blob behind illustration */
+.ec-hero__glow {
+    position: absolute;
+    width: 55%;
+    height: 55%;
+    border-radius: var(--radius-full);
+    background: radial-gradient(circle, rgba(12, 94, 255, 0.12) 0%, rgba(0, 212, 255, 0.06) 60%, transparent 100%);
+    filter: blur(40px);
+    pointer-events: none;
+}
+
+/* Floating badge */
+.ec-hero__badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 1rem 1.6rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+    font-size: var(--font-xs);
+    font-weight: 600;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    animation: ec-badge-bounce 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+.ec-hero__badge--orders {
+    top: 18%;
+    left: -2rem;
+    animation-delay: 0s;
+}
+
+.ec-hero__badge--revenue {
+    bottom: 22%;
+    right: -1rem;
+    animation-delay: 1.5s;
+}
+
+.ec-hero__badge-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ec-hero__badge-icon--green {
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+}
+
+.ec-hero__badge-icon--blue {
+    background: var(--color-primary-subtle);
+    color: var(--color-primary);
+}
+
+.ec-hero__badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.ec-hero__badge-value {
+    font-size: var(--font-sm);
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.ec-hero__badge-sub {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--color-text-muted);
+}
+
+@keyframes ec-badge-bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .ec-hero__inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .ec-hero__desc {
+        max-width: 100%;
+    }
+
+    .ec-hero__actions {
+        justify-content: center;
+    }
+
+    .ec-hero__stats {
+        justify-content: center;
+    }
+
+    .ec-hero__eyebrow {
+        justify-content: center;
+    }
+
+    .ec-hero__visual {
+        order: -1;
+        max-width: 48rem;
+        margin-inline: auto;
+    }
+
+    .ec-hero__badge--orders {
+        left: 0;
+    }
+
+    .ec-hero__badge--revenue {
+        right: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .ec-hero {
+        min-height: 100svh;
+    }
+
+    .ec-hero__heading {
+        font-size: clamp(3.2rem, 8vw, 4rem);
+    }
+
+    .ec-hero__badge {
+        display: none;
+    }
+
+    .ec-hero__stats {
+        gap: var(--space-lg);
+    }
+}
+
+/* ── Features strip below hero ── */
+.ec-features {
+    padding: var(--space-2xl) var(--container-pad);
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+}
+
+.ec-features__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+}
+
+.ec-feature-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-xl);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.ec-feature-card:hover {
+    border-color: var(--color-primary-border);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.ec-feature-card__icon {
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: var(--radius-md);
+    background: var(--color-primary-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.ec-feature-card__title {
+    font-size: var(--font-md);
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+.ec-feature-card__desc {
+    font-size: var(--font-sm);
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .ec-features__inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+}
+
+@media (max-width: 600px) {
+    .ec-features {
+        padding: var(--space-xl) var(--container-pad);
+    }
+}

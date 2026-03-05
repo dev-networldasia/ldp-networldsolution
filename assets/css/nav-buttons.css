@@ -1,0 +1,161 @@
+/* ============================================================
+   NAV-BUTTONS.CSS – Floating Contact Buttons (right side)
+   Networld Asia – Digital Marketing Landing Page
+   ============================================================ */
+
+/* ─── Container: stacked vertically, fixed right ─── */
+.nav-buttons {
+    position: fixed;
+    right: var(--space-md);
+    /* 16px from right edge */
+    bottom: 14rem;
+    /* above scroll-to-top button */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    z-index: var(--z-modal);
+}
+
+/* ─── Individual button ─── */
+.nav-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5.2rem;
+    /* 52px */
+    height: 5.2rem;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ─── Icon wrapper ─── */
+.nav-btn__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* ─── Tooltip (appears to the left on hover) ─── */
+.nav-btn__tooltip {
+    position: absolute;
+    right: calc(100% + 1rem);
+    top: 50%;
+    transform: translateY(-50%) translateX(6px);
+    background: var(--color-secondary);
+    color: var(--color-text-white);
+    font-size: var(--font-xs);
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+/* Tooltip arrow */
+.nav-btn__tooltip::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-left-color: var(--color-secondary);
+}
+
+.nav-btn:hover .nav-btn__tooltip {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+/* ─── Phone button: pulse ring animation ─── */
+.nav-btn--phone {
+    background: var(--color-primary);
+}
+
+.nav-btn__pulse {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--color-primary);
+    animation: nav-pulse 2s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes nav-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    70% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* ─── Zalo: brand color built into SVG ─── */
+.nav-btn--zalo {
+    /* background: transparent; */
+    box-shadow: 0 0.4rem 1.6rem rgba(0, 104, 255, 0.3);
+}
+
+.nav-btn--zalo:hover {
+    box-shadow: 0 0.8rem 2.4rem rgba(0, 104, 255, 0.4);
+}
+
+/* ─── Messenger: gradient brand color built into SVG ─── */
+.nav-btn--messenger {
+    background: var(--color-primary);
+    box-shadow: 0 0.4rem 1.6rem rgba(12, 94, 255, 0.3);
+}
+
+/* ─── Mobile: slightly smaller, closer to edge ─── */
+@media (max-width: 768px) {
+    .nav-buttons {
+        right: var(--space-sm);
+        bottom: 10rem;
+        gap: var(--space-xs);
+    }
+
+    .nav-btn {
+        width: 4.8rem;
+        height: 4.8rem;
+    }
+
+    /* Hide tooltip on mobile (no hover state on touch) */
+    .nav-btn__tooltip {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-buttons {
+        right: var(--space-sm);
+        bottom: 9rem;
+    }
+
+    .nav-btn {
+        width: 4.4rem;
+        height: 4.4rem;
+    }
+}

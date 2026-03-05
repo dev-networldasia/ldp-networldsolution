@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="assets/css/freetrial.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/contact-form.css" />
+  <link rel="stylesheet" href="assets/css/nav-buttons.css" />
 
 </head>
 
@@ -312,7 +313,7 @@
           </div>
         </div>
         <!-- Youtube – ngang heading line 2 -->
-        <div class="tile-container" style="grid-column:3; grid-row:5" data-max="25" data-radius="500">
+        <div class="tile-container" style="grid-column:9; grid-row:6" data-max="25" data-radius="500">
           <div class="channel-tile" style="color:#ff0000">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path
@@ -2094,6 +2095,38 @@
 
   </footer>
 
+  <!-- Floating Contact Nav Buttons -->
+  <div class="nav-buttons" id="nav-buttons" aria-label="Liên hệ nhanh">
+
+    <!-- Phone -->
+    <a href="tel:+842873030568" class="nav-btn nav-btn--phone" id="nav-btn-phone" aria-label="Gọi điện thoại">
+      <span class="nav-btn__tooltip">Gọi ngay</span>
+      <span class="nav-btn__icon">
+        <img src="assets/images/nav-button/phone-icon.svg" alt="" width="24" height="24" aria-hidden="true">
+      </span>
+      <span class="nav-btn__pulse" aria-hidden="true"></span>
+    </a>
+
+    <!-- Zalo -->
+    <a href="https://zalo.me/842873030568" class="nav-btn nav-btn--zalo" id="nav-btn-zalo" target="_blank"
+      rel="noopener noreferrer" aria-label="Chat Zalo">
+      <span class="nav-btn__tooltip">Chat Zalo</span>
+      <span class="nav-btn__icon">
+        <img src="assets/images/nav-button/zalo-icon.svg" alt="" width="26" height="26" aria-hidden="true">
+      </span>
+    </a>
+
+    <!-- Messenger -->
+    <a href="https://m.me/networldasia" class="nav-btn nav-btn--messenger" id="nav-btn-messenger" target="_blank"
+      rel="noopener noreferrer" aria-label="Chat Facebook Messenger">
+      <span class="nav-btn__tooltip">Nhắn tin</span>
+      <span class="nav-btn__icon">
+        <img src="assets/images/nav-button/facebook-mes-icon.svg" alt="" width="24" height="24" aria-hidden="true">
+      </span>
+    </a>
+
+  </div>
+
   <!-- Scroll to Top Button -->
   <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
     <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2106,8 +2139,11 @@
   <!-- Swiper JS -->
   <script src="assets/js/swiper-bundle.min.js"></script>
 
-  <!-- Main JS (loads templates and initializes components) -->
-  <script type="module" src="assets/js/main.js"></script>
+  <!-- Shared JS (header, mobile menu, scroll-to-top) -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Home-page JS (pricing, parallax, counter, template loader) -->
+  <script type="module" src="assets/js/home.js"></script>
 
   <!-- Multiplatform Swiper Init -->
   <script>
