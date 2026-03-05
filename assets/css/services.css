@@ -354,46 +354,101 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .services {
-        padding: 60px 0;
+        padding: 48px 0;
     }
 
     .services-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 28px;
+    }
+
+    .services-title {
+        font-size: 2.6rem;
+        margin-bottom: 24px;
         text-align: center;
+    }
+
+    /* Mockup lên TRÊN info trên mobile */
+    .services-mockup,
+    .services-mockup--flat,
+    .services-mockup--website {
+        order: -1;
+    }
+
+    /* Đảm bảo mockup hiển thị đủ, không bị cắt */
+    .services-mockup--flat {
+        padding: 1.6rem;
+    }
+
+    .services-mockup--website {
+        align-items: center;
+        min-height: 200px;
+    }
+
+    .services-mockup__img {
+        max-height: 260px;
+        object-fit: contain;
+    }
+
+    /* Icon + text nằm ngang */
+    .service-item {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 12px 0;
+        text-align: left;
+    }
+
+    .service-content .service-title {
+        font-size: 1.65rem;
+    }
+
+    .service-description {
+        font-size: 1.4rem;
+    }
+
+    /* Reset reverse trên mobile */
+    .services-content--reverse {
+        direction: ltr;
+    }
+
+    .browser-mockup {
+        transform: none;
+        max-width: 100%;
+    }
+
+    .pricing-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .services-pricing {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .services {
+        padding: 36px 0;
     }
 
     .services-title {
         font-size: 2rem;
     }
 
-    .service-item {
-        text-align: left;
+    .service-content .service-title {
+        font-size: 1.4rem;
     }
 
-    .browser-mockup {
-        transform: none;
-        max-width: 350px;
-    }
-}
-
-@media (max-width: 480px) {
-    .services-title {
-        font-size: 1.75rem;
-    }
-
-    .service-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+    .service-description {
+        font-size: 1.2rem;
     }
 
     .service-price {
         margin-left: 0;
     }
 
-    .pricing-btn {
-        width: 100%;
+    .services-pricing {
         text-align: center;
     }
 }

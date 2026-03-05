@@ -284,12 +284,19 @@
 @media (max-width: 900px) {
     .contact__container {
         flex-direction: column;
-        gap: 4.8rem;
+        gap: 4rem;
     }
 
     .contact__info {
         flex: none;
         width: 100%;
+        padding-bottom: 0;
+    }
+
+    /* Form chiếm full width khi stack dọc */
+    .contact__form-wrap {
+        width: 100%;
+        flex: none;
     }
 
     .contact__wave {
@@ -301,7 +308,7 @@
     }
 
     .contact__contact-block {
-        margin-top: 2.4rem;
+        margin-top: 2rem;
     }
 }
 
@@ -309,6 +316,18 @@
    RESPONSIVE: MOBILE (≤ 576px)
    ══════════════════════════════════════════════════════════════ */
 @media (max-width: 576px) {
+    .contact {
+        padding-block: var(--space-2xl);
+    }
+
+    .contact__title {
+        font-size: 2.8rem;
+    }
+
+    .contact__container {
+        gap: 3rem;
+    }
+
     .contact__form-wrap {
         width: 100%;
         padding: 2.4rem 2rem;

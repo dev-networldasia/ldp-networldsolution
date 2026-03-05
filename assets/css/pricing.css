@@ -52,11 +52,20 @@
 }
 
 /* ---------- Cards grid ---------- */
+.pricing__swiper {
+    overflow: hidden;
+}
+
 .pricing__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     align-items: stretch;
+}
+
+/* Pagination: ẩn trên desktop */
+.pricing__swiper-pagination {
+    display: none;
 }
 
 /* ---------- Individual card ---------- */
@@ -226,26 +235,83 @@
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1024px) {
-    .pricing__grid {
-        grid-template-columns: 1fr;
-        max-width: 50rem;
-        margin-inline: auto;
+
+/* Desktop (>1024px): Swiper disabled, CSS grid controls layout */
+@media (min-width: 1025px) {
+
+    /* Override Swiper's transform/flex so CSS grid works */
+    .pricing__grid.swiper-wrapper {
+        display: grid;
+        transform: none !important;
+        flex-wrap: wrap;
     }
 
-    /* Featured card shows first on small screens */
-    .pricing-card--featured,
-    .pricing-card--active {
-        order: -1;
+    .pricing__grid .swiper-slide {
+        width: auto !important;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Căng pricing-card theo chiều cao của slide */
+    .pricing__grid .swiper-slide .pricing-card {
+        flex: 1;
+    }
+}
+
+/* Tablet + Mobile (≤1024px): Swiper chiếm quyền điều khiển */
+@media (max-width: 1024px) {
+    .pricing__grid {
+        display: flex;
+        /* Swiper cần flex */
+    }
+
+    .pricing__swiper-pagination {
+        display: block;
+        margin-top: 2.4rem;
+        position: static;
+        text-align: center;
+    }
+
+    .pricing__swiper {
+        padding-bottom: 4rem;
+        overflow: visible;
+    }
+
+    /* Mỗi slide = 1 card, full width */
+    .pricing__grid .swiper-slide {
+        height: auto;
+    }
+
+    .pricing__grid .swiper-slide .pricing-card {
+        height: 100%;
+    }
+
+    /* Featured card nên xuất hiện dưới dạng initial slide 1 (JS set initialSlide) */
+    .pricing-card--active,
+    .pricing-card--featured {
+        order: 0;
     }
 }
 
 @media (max-width: 640px) {
     .pricing-card {
-        padding: 2.4rem 2rem 2.8rem;
+        padding: 2.4rem 2rem 2.4rem;
     }
 
-    .pricing__grid {
-        max-width: 100%;
+    .pricing-card__divider {
+        margin-block: 1.6rem;
+    }
+
+    .pricing-card__features {
+        gap: 0.9rem;
+    }
+
+    .pricing-card__cta {
+        margin-top: 2.4rem;
+    }
+
+    .pricing-card__price {
+        font-size: 2.8rem;
     }
 }
