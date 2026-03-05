@@ -110,8 +110,31 @@
   --container-max: 120rem;
   /* 1200px */
   --container-pad: clamp(1.6rem, 4vw, 4.8rem);
+
   --navbar-h: 7.2rem;
   /* 72px  */
+
+  /* ── Alpha / Semantic Colors ─────────────────────────── */
+  --color-primary-hover-bg: rgba(12, 94, 255, 0.05);
+  /* hover bg on primary items   */
+  --color-primary-subtle: rgba(12, 94, 255, 0.10);
+  /* icon badge bg, subtle tints  */
+  --color-primary-border: rgba(12, 94, 255, 0.25);
+  /* hover border on cards        */
+  --color-overlay-dark: rgba(10, 22, 40, 0.40);
+  /* mobile menu backdrop         */
+  --color-shadow-header: rgba(10, 22, 40, 0.08);
+  /* scrolled header shadow       */
+  --color-shadow-panel: rgba(10, 22, 40, 0.12);
+  /* mobile panel side shadow     */
+
+  /* ── Component Sizes ─────────────────────────────────── */
+  --size-icon-sm: 2.8rem;
+  /* 28px – contact info icons   */
+  --size-icon-md: 3.6rem;
+  /* 36px – social link buttons  */
+  --size-touch: 4.4rem;
+  /* 44px – min tap target       */
 }
 
 /* ---------- Reset & Base ---------- */
@@ -240,8 +263,8 @@ select {
 }
 
 .btn--primary {
-    background: #0C5EFF;
-    color: var(--color-text-white);
+  background: #0C5EFF;
+  color: var(--color-text-white);
 }
 
 .btn--primary:hover {
