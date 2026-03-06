@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="assets/css/pricing.css" />
     <link rel="stylesheet" href="assets/css/multiplatform.css" />
     <link rel="stylesheet" href="assets/css/contact-form.css" />
+    <link rel="stylesheet" href="assets/css/ecommerce-page.css" />
 
 </head>
 
@@ -169,7 +170,7 @@
                 <!-- Left: Copy -->
                 <div class="ec-hero__copy">
                     <h1 class="ec-hero__heading">
-                        <span class="ec-hero__heading-accent">NỀN TẢNG E-COMMERCE</span>
+                        <span class="ec-hero__heading-accent">NỀN TẢNG <span style="white-space: nowrap;">E-COMMERCE</span></span>
                         <span class="ec-hero__heading-main">BỨT PHÁ DOANH THU</span>
                     </h1>
 
@@ -834,26 +835,21 @@
 
                 <!-- Left: Info -->
                 <div class="contact__info">
-                    <div class="contact__badge"
-                        style="color: #FF5722; font-weight: 600; font-size: 1.4rem; padding: 0.6rem 2rem; background: #FFF3ED; border-radius: 3rem; display: inline-block; margin-bottom: 2rem; width: fit-content;">
+                    <div class="contact__badge">
                         Miễn phí 30 ngày sử dụng.
                     </div>
-                    <h2 class="contact__title" id="contact-heading"
-                        style="color: var(--color-primary); margin-bottom: 2rem;">Bắt đầu tăng trưởng doanh<br>thu ngay
-                        hôm nay</h2>
-                    <p class="contact__desc" style="font-size: 1.5rem;">
+                    <h2 class="contact__title" id="contact-heading">Bắt đầu tăng trưởng doanh thu ngay hôm nay</h2>
+                    <p class="contact__desc">
                         Thiết lập cỗ máy bán hàng đa kênh chỉ trong 3 bước. Cam kết tối ưu 30% chi phí vận hành ngay
                         trong tháng đầu tiên.
                     </p>
 
                     <div class="contact__contact-block">
-                        <p class="contact__contact-label" style="font-size: 1.6rem; font-weight: 600; color: #4A5568;">
-                            Liên hệ với chúng tôi</p>
+                        <p class="contact__contact-label">Liên hệ với chúng tôi</p>
 
-                        <div style="display: flex; align-items: center; gap: 1.6rem; margin-top: 1rem;">
+                        <div class="contact__contact-item-row">
                             <!-- Phone icon -->
-                            <div
-                                style="width: 48px; height: 48px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; color: white;">
+                            <div class="contact__icon-wrap">
                                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                     stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -861,17 +857,15 @@
                                 </svg>
                             </div>
                             <div>
-                                <span class="contact__contact-type"
-                                    style="font-size: 1.2rem; color: #8898aa;">Hotline</span><br>
-                                <a href="tel:+842873030568" class="contact__contact-value" id="contact-hotline"
-                                    style="font-size: 2rem; font-weight: 600; color: #2D3748;">(+84) 287 303 0568</a>
+                                <span class="contact__contact-type">Hotline</span><br>
+                                <a href="tel:+842873030568" class="contact__contact-value" id="contact-hotline">(+84)
+                                    287 303 0568</a>
                             </div>
                         </div>
 
-                        <div style="display: flex; align-items: center; gap: 1.6rem; margin-top: 2rem;">
+                        <div class="contact__contact-item-row contact__contact-item-row--mt-2">
                             <!-- Mail icon -->
-                            <div
-                                style="width: 48px; height: 48px; border-radius: 50%; background: var(--color-primary); display: flex; align-items: center; justify-content: center; color: white;">
+                            <div class="contact__icon-wrap">
                                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                     stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -879,11 +873,10 @@
                                 </svg>
                             </div>
                             <div>
-                                <span class="contact__contact-type"
-                                    style="font-size: 1.2rem; color: #8898aa;">Email</span><br>
-                                <a href="mailto:contact@networldsolutions.net" class="contact__contact-value"
-                                    id="contact-email"
-                                    style="font-size: 1.8rem; font-weight: 500; color: #2D3748;">contact@networldsolutions.net</a>
+                                <span class="contact__contact-type">Email</span><br>
+                                <a href="mailto:contact@networldsolutions.net"
+                                    class="contact__contact-value contact__contact-value--email"
+                                    id="contact-email">contact@networldsolutions.net</a>
                             </div>
                         </div>
                     </div>
@@ -895,10 +888,8 @@
 
                         <!-- Tên người liên hệ -->
                         <div class="contact-form__field">
-                            <label class="contact-form__label" for="cf-name"
-                                style="font-size: 1.3rem; margin-bottom: 0.2rem; cursor: pointer; user-select: none;">
-                                Tên người liên hệ <span class="contact-form__required" aria-hidden="true"
-                                    style="color: #e53e3e; margin-left: 0.2rem;">*</span>
+                            <label class="contact-form__label" for="cf-name">
+                                Tên người liên hệ <span class="contact-form__required" aria-hidden="true">*</span>
                             </label>
                             <input class="contact-form__input" type="text" id="cf-name" name="name"
                                 placeholder="Nhập họ và tên" required autocomplete="name" />
@@ -906,8 +897,7 @@
 
                         <!-- Tên doanh nghiệp -->
                         <div class="contact-form__field">
-                            <label class="contact-form__label" for="cf-company"
-                                style="font-size: 1.3rem; margin-bottom: 0.2rem; cursor: pointer; user-select: none;">
+                            <label class="contact-form__label" for="cf-company">
                                 Tên doanh nghiệp
                             </label>
                             <input class="contact-form__input" type="text" id="cf-company" name="company"
@@ -916,10 +906,8 @@
 
                         <!-- Số điện thoại -->
                         <div class="contact-form__field">
-                            <label class="contact-form__label" for="cf-phone"
-                                style="font-size: 1.3rem; margin-bottom: 0.2rem; cursor: pointer; user-select: none;">
-                                Số điện thoại <span class="contact-form__required" aria-hidden="true"
-                                    style="color: #e53e3e; margin-left: 0.2rem;">*</span>
+                            <label class="contact-form__label" for="cf-phone">
+                                Số điện thoại <span class="contact-form__required" aria-hidden="true">*</span>
                             </label>
                             <input class="contact-form__input" type="tel" id="cf-phone" name="phone"
                                 placeholder="Nhập số điện thoại người liên hệ" required autocomplete="tel" />
@@ -927,10 +915,8 @@
 
                         <!-- Ngân sách dự kiến -->
                         <div class="contact-form__field">
-                            <label class="contact-form__label" for="cf-budget"
-                                style="font-size: 1.3rem; margin-bottom: 0.2rem; cursor: pointer; user-select: none;">
-                                Ngân sách dự kiến <span class="contact-form__required" aria-hidden="true"
-                                    style="color: #e53e3e; margin-left: 0.2rem;">*</span>
+                            <label class="contact-form__label" for="cf-budget">
+                                Ngân sách dự kiến <span class="contact-form__required" aria-hidden="true">*</span>
                             </label>
                             <div class="contact-form__select-wrap">
                                 <select class="contact-form__select" id="cf-budget" name="budget" required>
@@ -949,10 +935,8 @@
 
                         <!-- Chọn gói giải pháp -->
                         <div class="contact-form__field">
-                            <label class="contact-form__label" for="cf-solution"
-                                style="font-size: 1.3rem; margin-bottom: 0.2rem; cursor: pointer; user-select: none;">
-                                Chọn gói giải pháp <span class="contact-form__required" aria-hidden="true"
-                                    style="color: #e53e3e; margin-left: 0.2rem;">*</span>
+                            <label class="contact-form__label" for="cf-solution">
+                                Chọn gói giải pháp <span class="contact-form__required" aria-hidden="true">*</span>
                             </label>
                             <div class="contact-form__select-wrap">
                                 <select class="contact-form__select" id="cf-solution" name="solution" required>
@@ -970,8 +954,7 @@
                         </div>
 
                         <!-- Submit -->
-                        <button class="contact-form__submit" type="submit" id="btn-contact-submit"
-                            style="margin-top: 1rem; border-radius: 1rem;">
+                        <button class="contact-form__submit" type="submit" id="btn-contact-submit">
                             Đăng ký dùng thử
                         </button>
 
@@ -981,26 +964,24 @@
             </div>
 
             <!-- Logos Bottom -->
-            <div class="container"
-                style="position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 4rem; margin-top: 6rem; flex-wrap: wrap;">
-                <div style="display: flex; flex-direction: column;">
-                    <span style="color: #4A5568; font-weight: 600; font-size: 1.5rem;">Hơn 500+</span>
-                    <span style="color: #718096; font-size: 1.4rem;">doanh nghiệp đã tin dùng</span>
+            <div class="container contact__logos">
+                <div class="contact__logos-text">
+                    <span class="contact__logos-count">Hơn 500+</span>
+                    <span class="contact__logos-desc">doanh nghiệp đã tin dùng</span>
                 </div>
-                <div style="display: flex; align-items: center; gap: 4rem; flex-wrap: wrap;">
-                    <img src="assets/images/logo-branch/msd.svg" alt="MSD" style="height: 35px; object-fit: contain;">
-                    <img src="assets/images/logo-branch/sanofi.png" alt="Pfizer"
-                        style="height: 35px; object-fit: contain; mix-blend-mode: multiply;">
-                    <img src="assets/images/logo-branch/KIA_logo3.svg" alt="KIA"
-                        style="height: 35px; object-fit: contain;">
-                    <img src="assets/images/logo-branch/hdbank-300px.png" alt="HDBank"
-                        style="height: 35px; object-fit: contain;">
-                    <img src="assets/images/logo-branch/cuckoo-logo.png" alt="CUCKOO"
-                        style="height: 40px; object-fit: contain;">
-                    <img src="assets/images/logo-branch/nutifood.png" alt="Nutifood"
-                        style="height: 40px; object-fit: contain;">
+                <div class="contact__logos-grid">
+                    <img class="contact__logo-img contact__logo-msd" src="assets/images/logo-branch/msd.svg" alt="MSD">
+                    <img class="contact__logo-img contact__logo-sanofi" src="assets/images/logo-branch/sanofi.png"
+                        alt="Sanofi">
+                    <img class="contact__logo-img contact__logo-kia" src="assets/images/logo-branch/KIA_logo3.svg"
+                        alt="KIA">
+                    <img class="contact__logo-img contact__logo-hdbank" src="assets/images/logo-branch/hdbank-300px.png"
+                        alt="HDBank">
+                    <img class="contact__logo-img contact__logo-cuckoo" src="assets/images/logo-branch/cuckoo-logo.png"
+                        alt="CUCKOO">
+                    <img class="contact__logo-img contact__logo-nutifood" src="assets/images/logo-branch/nutifood.png"
+                        alt="Nutifood">
                 </div>
-            </div>
 
         </section>
 

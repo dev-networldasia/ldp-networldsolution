@@ -481,28 +481,3 @@
         padding: var(--space-xl) var(--container-pad);
     }
 }
-
-/* ── Trust Section Override for Ecommerce Page ── */
-.trust {
-    background-color: #F6F7FB;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3C!-- H dashed --%3E%3Cline x1='7' y1='0' x2='73' y2='0' stroke='%23BAD2FF' stroke-opacity='.4' stroke-width='1' stroke-dasharray='4 5'/%3E%3C!-- V dashed --%3E%3Cline x1='0' y1='7' x2='0' y2='73' stroke='%23BAD2FF' stroke-opacity='.4' stroke-width='1' stroke-dasharray='4 5'/%3E%3C!-- TL corner --%3E%3Cline x1='0' y1='0' x2='6' y2='0' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='0' y1='0' x2='0' y2='6' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C!-- TR corner --%3E%3Cline x1='74' y1='0' x2='80' y2='0' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='80' y1='0' x2='80' y2='6' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C!-- BL corner --%3E%3Cline x1='0' y1='74' x2='0' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='0' y1='80' x2='6' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C!-- BR corner --%3E%3Cline x1='74' y1='80' x2='80' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3Cline x1='80' y1='74' x2='80' y2='80' stroke='%23BAD2FF' stroke-opacity='.25' stroke-width='1'/%3E%3C/svg%3E");
-    background-size: 80px 80px;
-    background-position: center;
-    border-bottom: none;
-    padding-top: var(--space-2xl);
-    padding-bottom: var(--space-xl);
-}
-
-.trust::before,
-.trust::after {
-    background: linear-gradient(to right, #F6F7FB, transparent);
-}
-
-.trust::after {
-    background: linear-gradient(to left, #F6F7FB, transparent);
-}
-
-.trust__title {
-    color: var(--color-text-third);
-    margin-bottom: var(--space-xl);
-}
